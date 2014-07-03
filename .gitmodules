@@ -1,3 +1,33 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule ".vim/bundle/FencView.vim"]
+	path = .vim/bundle/FencView.vim
+	url = git@github.com:vim-scripts/FencView.vim
+[submodule ".vim/bundle/vundle"]
+	path = .vim/bundle/vundle
+	url = git@github.com:gmarik/vundle
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = git@github.com:Lokaltog/vim-powerline
+[submodule ".vim/bundle/vim-fugitive"]
+	path = .vim/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
+[submodule ".vim/bundle/ShowTrailingWhitespace"]
+	path = .vim/bundle/ShowTrailingWhitespace
+	url = git@github.com:vim-scripts/ShowTrailingWhitespace
+[submodule ".vim/bundle/YouCompleteMe"]
+	path = .vim/bundle/YouCompleteMe
+	url = git@github.com:Valloric/YouCompleteMe
+[submodule ".vim/bundle/autoswap_mac"]
+	path = .vim/bundle/autoswap_mac
+	url = git@github.com:vitorgalvao/autoswap_mac
+[submodule ".vim/bundle/syntastic"]
+	path = .vim/bundle/syntastic
+	url = git@github.com:scrooloose/syntastic
+[submodule ".vim/bundle/vim-easymotion"]
+	path = .vim/bundle/vim-easymotion
+	url = git@github.com:Lokaltog/vim-easymotion
+[submodule ".vim/bundle/vim-indent-guides"]
+	path = .vim/bundle/vim-indent-guides
+	url = git@github.com:nathanaelkane/vim-indent-guides
