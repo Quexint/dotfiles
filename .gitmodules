@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/FencView.vim"]
 	path = .vim/bundle/FencView.vim
 	url = git@github.com:vim-scripts/FencView.vim
-[submodule ".vim/bundle/vundle"]
-	path = .vim/bundle/vundle
-	url = git@github.com:gmarik/vundle
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = git@github.com:Lokaltog/vim-powerline
@@ -31,3 +28,6 @@
 [submodule ".vim/bundle/vim-indent-guides"]
 	path = .vim/bundle/vim-indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides
+[submodule ".vim/bundle/Vundle.vim"]
+	path = .vim/bundle/Vundle.vim
+	url = git@github.com:gmarik/Vundle.vim
