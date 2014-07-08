@@ -10,14 +10,16 @@
  " let Vundle manage Vundle
  Plugin 'gmarik/vundle'
 
+ " Status Bar in Vim
  Plugin 'Lokaltog/vim-powerline'
  let g:Powerline_symbols = 'fancy'
  set laststatus=2
  "set guifont=Source\ Code\ Pro\ for\ Powerline
 
+
  Plugin 'tpope/vim-fugitive'
 
- Plugin 'vitorgalvao/autoswap_mac'
+ Plugin 'vim-scripts/autoswap.vim'
 
  " My Plugins here:
  "Plugin 'scrooloose/nerdtree'
