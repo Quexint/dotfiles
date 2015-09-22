@@ -35,6 +35,15 @@ backup() {
   for file in "${files[@]}"; do
     in_array $file "${excluded[@]}" || cp -Rf "$HOME/.$file" "$backupdir/$file"
   done
+
+  local files=( $(ls -a) )
+  for file in "${files[@]}"; do
+    in_array $file "${excluded[@]}"
+    should_install=$?
+    if [ $should_install -gt 0 ]; then
+      [ -d "$HOME/.$file" ] && rm -rf "$HOME/.$file"
+    fi
+  done
 }
 
 in_array() {
@@ -53,7 +62,7 @@ in_array() {
 
 backupdir="$HOME/.dotfiles-backup/$(date "+%Y%m%d%H%M.%S")"
 dependencies=(git hg pygmentize tree vim xmllint)
-excluded=(. .. .git .gitignore .gitmodules bootstrap.sh Gemfile Gemfile.lock Rakefile README.md)
+excluded=(. .. .git .gitignore .gitmodules bootstrap.sh Gemfile Gemfile.lock Rakefile README.md clean.sh)
 
 
 #-----------------------------------------------------------------------------
