@@ -55,6 +55,7 @@ install() {
 
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   chsh -s /bin/zsh
+  cp -Rf "zshrc" "$HOME/.zshrc"
 }
 
 in_array() {
