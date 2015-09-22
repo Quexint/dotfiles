@@ -1,42 +1,48 @@
 [submodule ".oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
-[submodule ".vim/bundle/FencView.vim"]
-	path = .vim/bundle/FencView.vim
+[submodule "vim/bundle/FencView.vim"]
+	path = vim/bundle/FencView.vim
 	url = git@github.com:vim-scripts/FencView.vim
-[submodule ".vim/bundle/vim-powerline"]
-	path = .vim/bundle/vim-powerline
+[submodule "vim/bundle/vim-powerline"]
+	path = vim/bundle/vim-powerline
 	url = git@github.com:Lokaltog/vim-powerline
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
 	url = git@github.com:tpope/vim-fugitive
-[submodule ".vim/bundle/ShowTrailingWhitespace"]
-	path = .vim/bundle/ShowTrailingWhitespace
+[submodule "vim/bundle/ShowTrailingWhitespace"]
+	path = vim/bundle/ShowTrailingWhitespace
 	url = git@github.com:vim-scripts/ShowTrailingWhitespace
-[submodule ".vim/bundle/YouCompleteMe"]
-	path = .vim/bundle/YouCompleteMe
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
 	url = git@github.com:Valloric/YouCompleteMe
-[submodule ".vim/bundle/autoswap_mac"]
-	path = .vim/bundle/autoswap_mac
+[submodule "vim/bundle/autoswap_mac"]
+	path = vim/bundle/autoswap_mac
 	url = git@github.com:vitorgalvao/autoswap_mac
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
 	url = git@github.com:scrooloose/syntastic
-[submodule ".vim/bundle/vim-easymotion"]
-	path = .vim/bundle/vim-easymotion
+[submodule "vim/bundle/vim-easymotion"]
+	path = vim/bundle/vim-easymotion
 	url = git@github.com:Lokaltog/vim-easymotion
-[submodule ".vim/bundle/vim-indent-guides"]
-	path = .vim/bundle/vim-indent-guides
+[submodule "vim/bundle/vim-indent-guides"]
+	path = vim/bundle/vim-indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
+[submodule "vim/bundle/Vundle.vim"]
+	path = vim/bundle/Vundle.vim
 	url = git@github.com:gmarik/Vundle.vim
-[submodule ".vim/bundle/autoswap.vim"]
-	path = .vim/bundle/autoswap.vim
+[submodule "vim/bundle/autoswap.vim"]
+	path = vim/bundle/autoswap.vim
 	url = git@github.com:vim-scripts/autoswap.vim.git
-[submodule ".vim/bundle/vim-snippets"]
-	path = .vim/bundle/vim-snippets
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
 	url = git@github.com:honza/vim-snippets.git
-[submodule ".vim/bundle/ultisnips"]
-	path = .vim/bundle/ultisnips
+[submodule "vim/bundle/vim-airline"]
+	path = vim/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
 	url = git@github.com:SirVer/ultisnips.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized
