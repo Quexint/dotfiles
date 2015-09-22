@@ -30,7 +30,8 @@ syn on
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-colorscheme default
+"colorscheme solarized
+"let g:solarized_termcolors=256
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -39,9 +40,36 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Status Bar in Vim
-Plugin 'Lokaltog/vim-powerline'
-let g:Powerline_symbols = 'fancy'
+"Plugin 'Lokaltog/vim-powerline'
+"let g:Powerline_symbols = 'fancy'
+"set laststatus=2
+
+Plugin 'altercation/vim-colors-solarized'
+
+" Status Bar in Vim
+Plugin 'bling/vim-airline'
 set laststatus=2
+let g:airline_theme='luna'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nnoremap [b :bp<CR>
+nnoremap ]b :bn<CR>
+" 切換buffer的方法
+"
+" :bn跳下一個buffer
+" :bp往上一個buffer
+" :b n 跳往第n個buffer
+" :bd關掉目前buffer
 
 
 " Git Status for Vim
@@ -58,7 +86,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 " Best Tab
 Plugin 'Valloric/YouCompleteMe'
-let g:ycm_key_list_select_completion = ['<TAB>', '<Enter>']
+let g:ycm_key_list_select_completion = ['<TAB>']
 let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py' " For YouCompleteMe C++ Support
 let g:ycm_complete_in_comments=1
