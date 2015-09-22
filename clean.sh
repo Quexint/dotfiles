@@ -37,26 +37,6 @@ backup() {
   done
 }
 
-install() {
-  local files=( $(ls -a) )
-  for file in "${files[@]}"; do
-    in_array $file "${excluded[@]}"
-    should_install=$?
-    if [ $should_install -gt 0 ]; then
-      [ -d "$HOME/.$file" ] && rm -rf "$HOME/.$file"
-      cp -Rf "$file" "$HOME/.$file"
-    fi
-  done
-  rm -rf $HOME/.oh-my-zsh
-
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim +PluginInstall +qall
-  $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
-
-  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  chsh -s /bin/zsh
-}
-
 in_array() {
   local hay needle=$1
   shift
@@ -113,23 +93,6 @@ if [ -d $HOME/dotfiles ]; then
   notice "Backup up old files ($backupdir)"
   backup
 
-  # Install
-  notice "Installing"
-  install
-else
-  # Clone Repo
-  notice "Downloading"
-  git clone --recursive git://github.com/Quexint/dotfiles.git $HOME/dotfiles
-
-  pushd $HOME/dotfiles
-
-  # Backup
-  notice "Backup up old files ($backupdir)"
-  backup
-
-  # Install
-  notice "Installing"
-  install
 fi
 
 
