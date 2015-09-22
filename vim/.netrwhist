@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/Quexint/.oh-my-zsh'
-let g:netrw_dirhist_2='/usr/local/texlive'
-let g:netrw_dirhist_3='/Users/Quexint/Documents/[Working] Sprout/basic-problem/w01/prob3'
-let g:netrw_dirhist_4='/Users/Quexint/.dotfiles/.vim/bundle/newheader.vim/plugin'
-let g:netrw_dirhist_5='/Users/Quexint/Documents/To Classify/ACM/OI/GCJ/2015/1A/B/res.log.trace'
-let g:netrw_dirhist_6='/Users/Quexint/res.log.trace'
-let g:netrw_dirhist_7='/Users/Quexint/qira/qemu'
-let g:netrw_dirhist_8='/Users/Quexint/qira/qemu/qemu-2.1.0-rc0'
-let g:netrw_dirhist_9='/Users/Quexint/.vim'
+let g:netrw_dirhist_cnt =0
