@@ -33,7 +33,7 @@ backup() {
 
   local files=( $(ls -a) )
   for file in "${files[@]}"; do
-    in_array $file "${excluded[@]}" || cp -Rf "$HOME/.$file" "$backupdir/$file"
+    in_array $file "${excluded[@]}" || cp -d "$HOME/.$file" "$backupdir/$file"
   done
 }
 
@@ -44,7 +44,7 @@ install() {
     should_install=$?
     if [ $should_install -gt 0 ]; then
       [ -d "$HOME/.$file" ] && rm -rf "$HOME/.$file"
-      cp -Rf "$file" "$HOME/.$file"
+      ln -s "$file" "$Home/.$file"
     fi
   done
   rm -rf $HOME/.oh-my-zsh
