@@ -44,6 +44,7 @@ install() {
     should_install=$?
     if [ $should_install -gt 0 ]; then
       [ -d "$HOME/.$file" ] && rm -rf "$HOME/.$file"
+      echo "$(pwd)"
       ln -s "$(pwd)/$file" "$HOME/.$file"
     fi
   done
