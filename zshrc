@@ -10,7 +10,8 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#eval "$(thefuck-alias)"
+newcpp () { cp ~/sample.cpp ./"$@".cpp }
+eval "$(thefuck --alias)"
 alias cProf='instruments -t "/Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/Resources/templates/Time Profiler.tracetemplate" -D res.log '
 
 # Uncomment the following line to use case-sensitive completion.
@@ -22,7 +23,7 @@ alias cProf='instruments -t "/Applications/Xcode.app/Contents/Applications/Instr
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line to disable colors in ls.
+ #Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
@@ -57,9 +58,10 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 #PROMPT="%{$fg_bold[yellow]%}%n@%M ${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}"
-export PATH="/Developer/NVIDIA/CUDA-5.5/bin:~/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
+export PATH="/Developer/NVIDIA/CUDA-5.5/bin:/usr/local/sbin:~/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin"
+#export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
 export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1
+#export DYLD_FALLBACK_LIBRARY_PATH=/usr/local/cuda/lib:/usr/local/lib:/usr/lib:/Developer/NVIDIA/CUDA-7.0/lib:
 #export CPATH=/Library/Developer/CommandLineTools/usr/include/c++/v1:/Library/Developer/CommandLineTools/usr/lib/clang/6.0/include:/Library/Developer/CommandLineTools/usr/include
 
 #. $(brew --prefix root)/libexec/thisroot.sh
