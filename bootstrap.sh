@@ -44,7 +44,7 @@ install() {
     should_install=$?
     if [ $should_install -gt 0 ]; then
       [ -d "$HOME/.$file" ] && rm -rf "$HOME/.$file"
-      ln -fs "$file" "$HOME/.$file"
+      ln -s "$file" "$HOME/.$file"
     fi
   done
   rm -rf $HOME/.oh-my-zsh
