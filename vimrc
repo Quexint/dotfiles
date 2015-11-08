@@ -59,10 +59,12 @@ nnoremap ]b :bn<CR>
 " :bp往上一個buffer
 " :b n 跳往第n個buffer
 " :bd關掉目前buffer
+Plugin 'myusuf3/numbers.vim'
+let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-map <C-n> :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
