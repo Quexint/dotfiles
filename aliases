@@ -12,5 +12,8 @@ alias p="cd ~/Projects"
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
+# Easily switch between `io.js` and `Node.js`
+alias use-iojs="brew unlink node && brew link --force iojs"
+alias use-node="brew unlink iojs && brew link --force node"
 
 alias cProf='instruments -t "/Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/Resources/templates/Time Profiler.tracetemplate" -D res.log '
