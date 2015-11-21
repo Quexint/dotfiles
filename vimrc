@@ -21,6 +21,7 @@ set shiftwidth=2
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,big5,gbk,latin1
+set tags=tags;
 
 colorscheme default
 
@@ -214,6 +215,22 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " Auto detect CJK and Unicode file encodings.
 Plugin 'FencView.vim'
 
+" Doxygen Support
+Plugin 'vim-scripts/DoxygenToolkit.vim'
+let g:load_doxygen_syntax=1
+let g:DoxygenToolkit_authorName="Quexint"   
+
+Plugin 'vim-scripts/taglist.vim'
+" 按F8按钮，在窗口的左侧出现taglist的窗口,像vc的左侧的workpace
+nnoremap <silent> <F8> :TlistToggle<CR><CR>
+let Tlist_Show_One_File=0                    " 只显示当前文件的tags
+let Tlist_Exit_OnlyWindow=1                  " 如果Taglist窗口是最后一个窗口则退出Vim
+let Tlist_Use_Right_Window=1                 " 在右侧窗口中显示
+let Tlist_File_Fold_Auto_Close=1             " 自动折叠
+autocmd BufWritePost *
+      \ if filereadable('tags') |
+      \   call system('ctags -a '.expand('%')) |
+      \ endif
 call vundle#end()            " required
 filetype plugin indent on    " required
 
