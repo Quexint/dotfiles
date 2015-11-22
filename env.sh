@@ -5,7 +5,10 @@ export PATH="/usr/local/share/python:/Developer/NVIDIA/CUDA-5.5/bin:/usr/local/s
 export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
 eval "$(rbenv init -)"
 eval "$(hub alias -s)"
+
+# Function
 function newcpp () { cp ~/sample.cpp ./"$@".cpp }
+function mkd() { mkdir -p "$@" && cd "$_"; }
 
 # Loading dotfiles
 source ~/.aliases
