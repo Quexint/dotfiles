@@ -3,8 +3,6 @@ filetype off                   " required!
 let mapleader=","              " Change mapleader
 
 """ Basic Setting """
-syn on
-
 set number
 set hlsearch
 set ruler
@@ -58,16 +56,18 @@ nnoremap ]b :bn<CR>
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 
+"Plugin 'ervandew/supertab'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsSnippetDirectories = [$HOME.'/dotfiles/UltiSnips']
 let g:UltiSnipsExpandTrigger="<c-x>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
 " Display Line Number
 Plugin 'myusuf3/numbers.vim'
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
@@ -201,6 +201,8 @@ autocmd BufWritePost *
       \ endif
 
 call vundle#end()            " required
+
+syn on
 filetype plugin indent on    " required
 
 """ Mapping Keyboard Setting
@@ -271,7 +273,6 @@ endfunction
 
 "====[ Always turn on syntax highlighting for diffs ]=========================
 
-filetype on
 augroup PatchDiffHighlight
   autocmd!
   autocmd FileType  diff   syntax enable
