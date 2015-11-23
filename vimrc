@@ -206,8 +206,8 @@ syn on
 filetype plugin indent on    " required
 
 """ Mapping Keyboard Setting
-vmap <C-c> y:call system("pbcopy", getreg("\""))<CR> " Copy in Mac
-nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>p " Paste in Mac
+vmap <Leader>cp y:call system("pbcopy", getreg("\""))<CR> " Copy in Mac
+nmap <Leader>p :call setreg("\"",system("pbpaste"))<CR>p " Paste in Mac
 
 map<F3> :w<CR> :make "%<" CFLAGS="-Wall -Wshadow -g -O2 -fno-builtin" CXXFLAGS="-Wall -Wshadow -g -O2 -std=gnu++98"<CR> :cl<CR>
 imap<F3> <ESC><F3>
