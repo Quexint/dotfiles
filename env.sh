@@ -7,7 +7,6 @@ eval "$(rbenv init -)"
 eval "$(hub alias -s)"
 
 # Function
-function newcpp () { cp ~/sample.cpp ./"$@".cpp }
 function mkd() { mkdir -p "$@" && cd "$_"; }
 
 # Loading dotfiles
