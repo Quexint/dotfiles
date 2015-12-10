@@ -44,7 +44,6 @@ install() {
     should_install=$?
     if [ $should_install -gt 0 ]; then
       [ -d "$HOME/.$file" ] && rm -rf "$HOME/.$file"
-      echo "$(pwd)"
       ln -s "$(pwd)/$file" "$HOME/.$file"
     fi
   done
@@ -52,10 +51,10 @@ install() {
 
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
-  $HOME/.vim/bundle/YouCompleteMe/install.py --clang-completer
 
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   chsh -s /bin/zsh
+  rm "$HOME/.zshrc"
   ln -s "zshrc" "$HOME/.zshrc"
 }
 

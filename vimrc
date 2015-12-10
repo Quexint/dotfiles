@@ -54,7 +54,7 @@ nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 
 " Track the engine.
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 
 "Plugin 'ervandew/supertab'
 " Snippets are separated from the engine. Add this if you want them:
