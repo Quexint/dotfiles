@@ -3,6 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
+alias sd='cd /Volumes/SD\ Card'
 
 # Shortcuts
 alias dl="cd ~/Downloads"
