@@ -206,7 +206,7 @@ syn on
 filetype plugin indent on    " required
 
 """ Mapping Keyboard Setting
-vmap <Leader>cp y:call system("pbcopy", getreg("\""))<CR> " Copy in Mac
+vmap <Leader>c y:call system("pbcopy", getreg("\""))<CR> " Copy in Mac
 nmap <Leader>p :call setreg("\"",system("pbpaste"))<CR>p " Paste in Mac
 
 map<F3> :w<CR> :make "%<" CFLAGS="-Wall -Wshadow -g -O2 -fno-builtin" CXXFLAGS="-Wall -Wshadow -g -O2 -std=gnu++98"<CR> :cl<CR>
@@ -242,7 +242,7 @@ nnoremap k gk
 " Toggle show tabs and trailing spaces (,c)
 set lcs=tab:›\ ,trail:·,eol:␍,nbsp:_
 set fcs=fold:-
-nnoremap <silent> <leader>c :set nolist!<CR>
+nnoremap <silent> <leader>n :set nolist!<CR>
 
 "====[ Make the 81st column stand out ]====================
 highlight ColorColumn ctermbg=Red
@@ -277,3 +277,14 @@ augroup PatchDiffHighlight
   autocmd!
   autocmd FileType  diff   syntax enable
 augroup END
+
+
+function RangerExplorer()
+    exec "silent !ranger --choosefile=/tmp/vim_ranger_current_file " . system('echo "' . expand("%:p:h") . '" | sed -E "s/\ /\\\ /g"')
+    if filereadable('/tmp/vim_ranger_current_file')
+        exec 'edit ' . system('cat /tmp/vim_ranger_current_file | sed -E "s/\ /\\\ /g"')
+        call system('rm /tmp/vim_ranger_current_file')
+    endif
+    redraw!
+endfun
+map <Leader>x :call RangerExplorer()<CR>

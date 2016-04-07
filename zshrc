@@ -3,7 +3,7 @@ export LANG=en_US.UTF-8
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git osx zsh-syntax-highlighting autojump)
+plugins=(git osx zsh-syntax-highlighting autojump zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
