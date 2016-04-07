@@ -1,5 +1,5 @@
 Mac Dependency:
-- Install:`brew install zsh mercurial tree libxml2 && easy_install pygments`
+- Install:`brew install ctags-exuberant zsh mercurial tree libxml2 thefuck && easy_install pygments`
 
 CentOS 7 Dependency:
 - Install: `yum install ctags zsh hg tree libxml2 git vim; easy_install pygments`

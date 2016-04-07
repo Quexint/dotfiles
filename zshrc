@@ -6,8 +6,15 @@ ZSH_THEME="robbyrussell"
 plugins=(git osx zsh-syntax-highlighting autojump zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-eval "$(thefuck --alias)"
+
+if [[ `uname` == 'Darwin' ]]
+then
+  [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+  eval "$(thefuck --alias)"
+  eval "$(hub alias -s)"
+else
+fi
+
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 . ~/dotfiles/env.sh
