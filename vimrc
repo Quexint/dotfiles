@@ -12,7 +12,6 @@ set cursorline
 set expandtab
 set incsearch
 set ignorecase
-set background=dark
 set mouse=a
 set cindent
 set backspace=indent,eol,start
@@ -26,6 +25,7 @@ set fileencodings=utf-8,big5,gbk,latin1
 set tags=tags;
 
 colorscheme default
+set background=dark
 
 """ Vundle Setting """
 set rtp+=~/.vim/bundle/Vundle.vim
