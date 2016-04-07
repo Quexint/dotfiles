@@ -53,6 +53,9 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
 
+" vim-airline-themes
+Plugin 'vim-airline/vim-airline-themes'
+
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 

@@ -1,8 +1,7 @@
-Dependency:
-- zsh: `brew install zsh`
-- hg: `brew install mercurial`
-- tree: `brew install tree`
-- pygmentize: `easy_install pygments`
-- xmllint: `brew install libxml2`
+Mac Dependency:
+- Install:`brew install zsh mercurial tree libxml2 && easy_install pygments`
+
+CentOS 7 Dependency:
+- Install: `yum install ctags zsh hg tree libxml2 git vim; easy_install pygments`
 
 Install: `bash < <( curl https://raw.githubusercontent.com/Quexint/dotfiles/master/bootstrap.sh )`
