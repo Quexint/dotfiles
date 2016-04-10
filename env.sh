@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+# Ruby PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
 # PATH
 if [[ `uname` == 'Darwin' ]]
 then
@@ -8,7 +13,6 @@ then
   export PATH="~/dotfiles/hacker_scripts/:$PATH"
   export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
   export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
-  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
   set RANGER_LOAD_DEFAULT_RC=FALSE
 else
 fi
