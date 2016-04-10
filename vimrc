@@ -52,6 +52,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 " [b(Previous Tab) ]b(Next Tab) :bd(Close Tab) :b <number>(Jump to Tab <number>
 nnoremap [b :bp<CR>
 nnoremap ]b :bn<CR>
+nnoremap <Leader>qt :bd<CR>
 
 " vim-airline-themes
 Plugin 'vim-airline/vim-airline-themes'

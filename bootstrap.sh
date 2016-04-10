@@ -28,34 +28,28 @@ dep() {
   return $installed
 }
 
-backup() {
-  mkdir -p $backupdir
-
-  local files=( $(ls -a) )
-  for file in "${files[@]}"; do
-    in_array $file "${excluded[@]}" || mv -f "$HOME/.$file" "$backupdir/$file"
-  done
-}
-
 install() {
+  # Make file alias into ~/
   local files=( $(ls -a) )
   for file in "${files[@]}"; do
     in_array $file "${excluded[@]}"
     should_install=$?
     if [ $should_install -gt 0 ]; then
-      [ -d "$HOME/.$file" ] && rm -rf "$HOME/.$file"
-      ln -s "$(pwd)/$file" "$HOME/.$file"
+      [ -d "$HOME/.$file" ] && mv "$HOME/.$file" "$backupdir/.$file"
+      ln -s "$targetdir/$file" "$HOME/.$file"
     fi
   done
-  rm -rf $HOME/.oh-my-zsh
 
+  # Install Vundle Plugins in Vim
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 
+  # Reinstall oh-my-zsh
+  mv $HOME/.oh-my-zsh $backupdir/.oh-my-zsh
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   sudo chsh -s /bin/zsh
   rm "$HOME/.zshrc"
-  ln -s "$HOME/dotfiles/zshrc" "$HOME/.zshrc"
+  ln -s "$targetdir/zshrc" "$HOME/.zshrc"
 }
 
 in_array() {
@@ -72,9 +66,11 @@ in_array() {
 # Initialize
 #-----------------------------------------------------------------------------
 
-backupdir="$HOME/.dotfiles-backup/$(date "+%Y%m%d%H%M.%S")"
-dependencies=(git hg pygmentize tree vim xmllint)
-excluded=(. .. .git .gitignore .gitmodules bootstrap.sh Gemfile Gemfile.lock Rakefile README.md clean.sh)
+rundatetime=$(date "+%Y%m%d%H%M.%S")
+backupdir="$HOME/.dotfiles-backup.$(rundatetime)"
+targetdir="$HOME/dotfiles"
+dependencies=(zsh git hg pygmentize tree vim xmllint)
+excluded=(. .. .git .gitignore .gitmodules bootstrap.sh Gemfile Gemfile.lock Rakefile README.md UltiSnips hacker_scripts)
 
 
 #-----------------------------------------------------------------------------
@@ -95,48 +91,33 @@ if [ $not_met -gt 0 ]; then
   exit 1
 fi
 
-
 #-----------------------------------------------------------------------------
 # Install
 #-----------------------------------------------------------------------------
 
-# Assumes $HOME/dotfiles is *ours*
+# Create Backup Dir
+mkdir -p $backupdir
+
+# Detect whether ther folder dotfiles exists
 if [ -d $HOME/dotfiles ]; then
-  pushd $HOME/dotfiles
-
-  # Update Repo
-  notice "Updating"
-  git pull origin master
-  git submodule init
-  git submodule update
-
-  # Backup
-  notice "Backup up old files ($backupdir)"
-  backup
-
-  # Install
-  notice "Installing"
-  install
-else
-  # Clone Repo
-  notice "Downloading"
-  git clone --recursive git://github.com/Quexint/dotfiles.git $HOME/dotfiles
-
-  pushd $HOME/dotfiles
-
-  # Backup
-  notice "Backup up old files ($backupdir)"
-  backup
-
-  # Install
-  notice "Installing"
-  install
+  notice "Backup ole dotfile folder..."
+  mv "$HOME/dotfiles" "$backupdir/dotfiles"
 fi
 
+# Clone Repo
+notice "Cloning the repo..."
+git clone --recursive git://github.com/Quexint/dotfiles.git $targetdir
 
-#-----------------------------------------------------------------------------
-# Finished
-#-----------------------------------------------------------------------------
+pushd $targetdir
+
+# Install
+notice "Installing"
+install
+
+# Delete Empty Backup Dir
+if [ ! "$(ls -A $Backup)" ]; then
+  rm -r $backupdir
+fi
 
 popd
 notice "Done"

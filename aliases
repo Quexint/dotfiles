@@ -1,21 +1,22 @@
-# Dir navigation
+# Dir Navigation
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
 alias sd='cd /Volumes/SD\ Card'
-
-# Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
 alias tmp="cd ~/tmp/"
 
-# Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
+# Functions
+# mkd xxx yyy: create the folder xxx and yyy
+# mkd "xxx yyy": create the folder called `xxx yyy`
+function mkd() { mkdir -p "$@" && cd "$_"; }
+
+## Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
 # Easily switch between `io.js` and `Node.js`
 alias use-iojs="brew unlink node && brew link --force iojs"
 alias use-node="brew unlink iojs && brew link --force node"
-
-alias cProf='instruments -t "/Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/Resources/templates/Time Profiler.tracetemplate" -D res.log '
