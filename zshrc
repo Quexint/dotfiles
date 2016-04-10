@@ -15,6 +15,7 @@ then
   eval "$(thefuck --alias)"
   eval "$(hub alias -s)"
 else
+  if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
 fi
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
