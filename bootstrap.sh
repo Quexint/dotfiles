@@ -35,7 +35,7 @@ install() {
     in_array $file "${excluded[@]}"
     should_install=$?
     if [ $should_install -gt 0 ]; then
-      [ -d "$HOME/.$file" ] && mv "$HOME/.$file" "$backupdir/.$file"
+      [ -d "$HOME/.$file" ] && mv -f "$HOME/.$file" "$backupdir/.$file"
       ln -s "$targetdir/$file" "$HOME/.$file"
     fi
   done
@@ -45,7 +45,7 @@ install() {
   vim +PluginInstall +qall
 
   # Reinstall oh-my-zsh
-  mv $HOME/.oh-my-zsh $backupdir/.oh-my-zsh
+  mv -f $HOME/.oh-my-zsh $backupdir/.oh-my-zsh
   sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   sudo chsh -s /bin/zsh
   rm "$HOME/.zshrc"

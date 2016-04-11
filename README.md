@@ -16,12 +16,12 @@
 
 ## Installation
 Mac Dependency:
-- Install:`brew install vim ctags-exuberant zsh mercurial tree libxml2 thefuck && easy_install pygments`
+- **Install**:`brew install vim ctags-exuberant zsh mercurial tree libxml2 thefuck && easy_install pygments`
 
 CentOS 7 Dependency:
-- Install: `yum install ctags zsh hg tree libxml2 git vim; easy_install pygments`
+- **Install**: `yum install ctags zsh hg tree libxml2 git vim; easy_install pygments`
 
-Install: `bash < <(curl https://raw.githubusercontent.com/Quexint/dotfiles/master/bootstrap.sh)`
+**Install**: `bash < <(curl https://raw.githubusercontent.com/Quexint/dotfiles/master/bootstrap.sh)`
 
 ## References
 - [A lot of dotfiles Repo](https://github.com/search?o=desc&q=dotfiles&s=stars&type=Repositories&utf8=%E2%9C%93)

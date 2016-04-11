@@ -293,3 +293,5 @@ function RangerExplorer()
     redraw!
 endfun
 map <Leader>x :call RangerExplorer()<CR>
+
+au FileType crontab setlocal bkc=yes
