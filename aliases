@@ -3,6 +3,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
+alias mooc='cd /Volumes/SD\ Card/MOOC/'
 alias sd='cd /Volumes/SD\ Card'
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
