@@ -1,10 +1,5 @@
 #!/bin/zsh
 
-# Ruby PATH
-export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-
 # PATH
 if [[ `uname` == 'Darwin' ]]
 then
@@ -16,6 +11,10 @@ then
   set RANGER_LOAD_DEFAULT_RC=FALSE
 else
 fi
+
+# Ruby PATH
+export RBENV_ROOT=/usr/local/var/rbenv
+eval "$(rbenv init -)"
 
 # Loading Aliases
 source ~/.aliases
