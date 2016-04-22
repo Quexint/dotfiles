@@ -16,5 +16,8 @@ fi
 export RBENV_ROOT=/usr/local/var/rbenv
 eval "$(rbenv init -)"
 
+# GO PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
 # Loading Aliases
 source ~/.aliases
