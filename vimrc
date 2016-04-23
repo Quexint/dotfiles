@@ -36,7 +36,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 set laststatus=2
-let g:airline_theme='luna'
+let g:solarized_termcolors=256
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -252,12 +253,10 @@ function! HLNext (blinktime)
 endfunction
 
 "====================[ Always turn on syntax highlighting for diffs ]==================="
-
 augroup PatchDiffHighlight
   autocmd!
   autocmd FileType  diff   syntax enable
 augroup END
-
 
 "==================== Ranger in OS X ===================="
 function RangerExplorer()
