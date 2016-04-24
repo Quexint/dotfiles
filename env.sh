@@ -13,11 +13,28 @@ else
 fi
 
 # Ruby PATH
-export RBENV_ROOT=/usr/local/var/rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null;
+then
+  export RBENV_ROOT=/usr/local/var/rbenv
+  eval "$(rbenv init -)";
+fi
 
 # GO PATH
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# Swift PATH
+if which swiftenv > /dev/null;
+then
+  export SWIFTENV_ROOT=/usr/local/var/swiftenv
+  eval "$(swiftenv init -)";
+fi
+
+# Python PATH
+if which pyenv > /dev/null;
+then
+  export PYENV_ROOT=/usr/local/var/pyenv
+  eval "$(pyenv init -)";
+fi
 
 # Loading Aliases
 source ~/.aliases
