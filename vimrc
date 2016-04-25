@@ -126,7 +126,6 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-
 "==================== Syntax Checking: syntastic ===================="
 Plugin 'scrooloose/syntastic'
 let g:syntastic_error_symbol = '✗'
@@ -275,3 +274,9 @@ map <Leader>x :call RangerExplorer()<CR>
 
 "==================== To Edit crontab ===================="
 au FileType crontab setlocal bkc=yes
+
+
+"==================== Pmenu Color ===================="
+hi Pmenu                    ctermfg=14 ctermbg=242
+hi PmenuSel                 ctermfg=14 ctermbg=1
+hi PmenuSbar                ctermfg=14 ctermbg=0
