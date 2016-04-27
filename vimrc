@@ -276,7 +276,8 @@ map <Leader>x :call RangerExplorer()<CR>
 au FileType crontab setlocal bkc=yes
 
 
-"==================== Pmenu Color ===================="
+"==================== Customized Color ===================="
 hi Pmenu                    ctermfg=14 ctermbg=242
 hi PmenuSel                 ctermfg=14 ctermbg=1
 hi PmenuSbar                ctermfg=14 ctermbg=0
+hi SpellBad ctermbg=1
