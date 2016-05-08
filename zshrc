@@ -19,10 +19,24 @@ else
   if [ -e /usr/bin/vimx ]; then alias vim='/usr/bin/vimx'; fi
 fi
 
+#======================== Integration with iTerm2 ========================
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
+#======================== Environment Setting ========================
 . ~/dotfiles/env.sh
 
+#======================== Command History Setting ========================
+zshaddhistory () {
+  # Don't store (1) Len <= 5 (2) cd/ls/git command
+  COMMAND_STR=${1%%$'\n'}
+  [[  ( ${#COMMAND_STR} -le 5) || ( -z $COMMAND_STR ) || ( $COMMAND_STR =~ hist(ory)? ) || \
+      ( $COMMAND_STR =~ ^l(s\|l\|a)?$ ) || \
+      ( $COMMAND_STR =~ ^(d\|gd\|git\ diff\|glp\|gg)$ ) \
+  ]] && return 1
+  # Don't store the failed command
+  whence ${${(z)1}[1]} >| /dev/null || return 1
+}
+#========================= Prompt Setting ========================
 function collapse_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
 }
