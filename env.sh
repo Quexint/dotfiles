@@ -11,6 +11,34 @@ then
 else
 fi
 
+# C Programming Environment
+export q_c_warn="-Wall -pedantic  \
+    -pedantic-errors -Wextra -Waggregate-return -Wcast-align \
+    -Wcast-qual  -Wchar-subscripts  -Wcomment -Wconversion \
+    -Wdisabled-optimization \
+    -Werror -Wfloat-equal  -Wformat  -Wformat=2 \
+    -Wformat-nonliteral -Wformat-security  \
+    -Wformat-y2k \
+    -Wlogical-op -Wno-parentheses \
+    -Wimplicit  -Wimport  -Winit-self  -Winline \
+    -Winvalid-pch   \
+    -Wunsafe-loop-optimizations  -Wlong-long -Wmissing-braces \
+    -Wmissing-field-initializers -Wmissing-format-attribute   \
+    -Wmissing-include-dirs -Wmissing-noreturn \
+    -Wpacked  -Wpadded -Wparentheses  -Wpointer-arith \
+    -Wredundant-decls -Wreturn-type \
+    -Wsequence-point  -Wshadow -Wsign-compare  -Wstack-protector \
+    -Wstrict-overflow=5 -Wundef -Wno-unused -Wno-variadic-macros \
+    -Wstrict-aliasing -Wstrict-aliasing=2 -Wswitch  -Wswitch-default \
+    -Wswitch-enum -Wtrigraphs  -Wuninitialized \
+    -Wunknown-pragmas  -Wunreachable-code -Wunused \
+    -Wunused-function  -Wunused-label  -Wunused-parameter \
+    -Wunused-value  -Wunused-variable  -Wvariadic-macros \
+    -Wvolatile-register-var  -Wwrite-strings -fdiagnostics-show-option"
+export q_cpp_warn="$q_c_warn -Weffc++ -Wctor-dtor-privacy -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wsign-promo -Wstrict-null-sentinel"
+alias qcc6="gcc-6 -g -O3 $q_c_warn"
+alias q++6="g++-6 -g -O3 $q_cpp_warn"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 # Ruby PATH
 if which rbenv > /dev/null;
