@@ -4,7 +4,7 @@
 if [[ `uname` == 'Darwin' ]]
 then
   pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:~/.cabal/bin:/usr/local/bin:~/anaconda3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:$PATH:/usr/local/cuda/bin"
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$HOME/.cabal/bin:/usr/local/bin:$HOME/anaconda3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:$PATH:/usr/local/cuda/bin"
   export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
   export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
   set RANGER_LOAD_DEFAULT_RC=FALSE
@@ -41,7 +41,7 @@ alias q++6="g++-6 -g -O3 $q_cpp_warn"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 # Ruby PATH
-if which rbenv > /dev/null;
+if type rbenv > /dev/null 2>&1;
 then
   export RBENV_ROOT=/usr/local/var/rbenv
   eval "$(rbenv init -)";
@@ -51,14 +51,14 @@ fi
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Swift PATH
-if which swiftenv > /dev/null;
+if type swiftenv > /dev/null 2>&1;
 then
   export SWIFTENV_ROOT=/usr/local/var/swiftenv
   eval "$(swiftenv init -)";
 fi
 
 # Python PATH
-if which pyenv > /dev/null;
+if type pyenv > /dev/null 2>&1;
 then
   export PYENV_ROOT=/usr/local/var/pyenv
   eval "$(pyenv init -)";
