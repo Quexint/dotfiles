@@ -1,5 +1,5 @@
 #!/bin/bash
-pushd $(pwd)
+pushd "$(pwd)"
 for d in ./*/ ; do
   if [ -d "$d/.git" ]; then
     echo "Updating \"$d\"..."
