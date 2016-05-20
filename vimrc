@@ -206,9 +206,7 @@ if has("cscope")
   set csverb
 endif
 
-nmap <F7> :!find . -iname '*.c' -o -iname '*.cpp' -o -iname '*.h' -o -iname '*.hpp' > cscope.files<CR> 
-                         \ :!cscope -b -i cscope.files -f cscope.out<CR> 
-                         \ :cs reset<CR>
+nmap <F7> :!ctags -R <CR> :!cscope -Rbq -P. <CR> :cs reset<CR>
 
 nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
