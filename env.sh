@@ -1,5 +1,30 @@
 #!/bin/zsh
 
+# Ruby PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+if type rbenv > /dev/null 2>&1;
+then
+  export RBENV_ROOT=/usr/local/var/rbenv
+  eval "$(rbenv init -)";
+fi
+
+# GO PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+
+# Swift PATH
+if type swiftenv > /dev/null 2>&1;
+then
+  export SWIFTENV_ROOT=/usr/local/var/swiftenv
+  eval "$(swiftenv init -)";
+fi
+
+# Python PATH
+if type pyenv > /dev/null 2>&1;
+then
+  export PYENV_ROOT=/usr/local/var/pyenv
+  eval "$(pyenv init -)";
+fi
+
 # PATH
 if [[ `uname` == 'Darwin' ]]
 then
@@ -38,31 +63,6 @@ export q_c_warn="-Wall -pedantic  \
 export q_cpp_warn="$q_c_warn -Weffc++ -Wctor-dtor-privacy -Wnoexcept -Wold-style-cast -Woverloaded-virtual -Wsign-promo -Wstrict-null-sentinel"
 alias qcc6="gcc-6 -g -O3 $q_c_warn"
 alias q++6="g++-6 -g -O3 $q_cpp_warn"
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-# Ruby PATH
-if type rbenv > /dev/null 2>&1;
-then
-  export RBENV_ROOT=/usr/local/var/rbenv
-  eval "$(rbenv init -)";
-fi
-
-# GO PATH
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-
-# Swift PATH
-if type swiftenv > /dev/null 2>&1;
-then
-  export SWIFTENV_ROOT=/usr/local/var/swiftenv
-  eval "$(swiftenv init -)";
-fi
-
-# Python PATH
-if type pyenv > /dev/null 2>&1;
-then
-  export PYENV_ROOT=/usr/local/var/pyenv
-  eval "$(pyenv init -)";
-fi
 
 # Loading Aliases
 source ~/.aliases
