@@ -30,7 +30,7 @@ set background=dark
 "================================ Vundle Setting ================================"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "==================== Status Bar: Airline ===================="
 Plugin 'vim-airline/vim-airline'
@@ -138,6 +138,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"==================== Comment the code: Nerdcommenter ===================="
+Plugin 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
 
 "==================== Display Indent: vim-indent-guides ===================="
 " Usage: <leader> ig
