@@ -3,8 +3,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias ~='cd ~'
-alias mooc='cd /Volumes/SD\ Card/MOOC/'
-alias sd='cd /Volumes/SD\ Card'
+alias mooc='cd /Volumes/SD_Card/MOOC/'
+alias sd='cd /Volumes/SD_Card'
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Projects"
@@ -14,6 +14,7 @@ alias tmp="cd ~/tmp/"
 # mkd xxx yyy: create the folder xxx and yyy
 # mkd "xxx yyy": create the folder called `xxx yyy`
 function mkd() { mkdir -p "$@" && cd "$_"; }
+function copycode() { highlight -O rtf "$@" | pbcopy; }
 
 ## Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; gem update --system; gem update'
