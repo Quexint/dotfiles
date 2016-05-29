@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Csharp PATH
+export MONO_GAC_PREFIX="/usr/local"
+
 # Ruby PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 if type rbenv > /dev/null 2>&1;
