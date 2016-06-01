@@ -31,7 +31,7 @@ fi
 if [[ `uname` == 'Darwin' ]]
 then
   pushd $(brew --prefix root) >/dev/null; . libexec/thisroot.sh; popd >/dev/null
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$HOME/.cabal/bin:/usr/local/bin:$HOME/anaconda3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:$PATH:/usr/local/cuda/bin"
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:$HOME/.cabal/bin:/usr/local/bin:$HOME/anaconda3/bin:$PATH:/opt/X11/bin:/usr/texbin:/usr/local/cuda/bin:/usr/bin:/bin:/usr/sbin:/sbin"
   export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
   export JAVA_HOME="`/usr/libexec/java_home -v 1.8`"
   set RANGER_LOAD_DEFAULT_RC=FALSE
