@@ -36,6 +36,7 @@ zshaddhistory () {
   # Don't store the failed command
   whence ${${(z)1}[1]} >| /dev/null || return 1
 }
+
 #========================= Prompt Setting ========================
 function collapse_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
