@@ -18,6 +18,7 @@ set backspace=indent,eol,start
 set softtabstop=2
 set tabstop=2
 set shiftwidth=2
+set foldmethod=syntax
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -269,6 +270,12 @@ nnoremap k gk
 set lcs=tab:›\ ,trail:·,eol:␍,nbsp:_
 set fcs=fold:-
 nnoremap <silent> <leader>n :set nolist!<CR>
+
+" Function Folding
+inoremap <F9> <C-O>zA
+nnoremap <F9> zA
+onoremap <F9> <C-C>zA
+vnoremap <F9> zf
 
 "====================[ Make the 81st column stand out ]===================="
 highlight ColorColumn ctermbg=Red
