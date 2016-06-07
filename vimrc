@@ -149,9 +149,8 @@ function! ToggleErrors()
     endif
 endfunction
 
-"==================== Comment the code: Nerdcommenter ===================="
-Plugin 'scrooloose/nerdcommenter'
-let g:NERDSpaceDelims = 1
+"==================== Comment the code: vim-commnetary ===================="
+Plugin 'tpope/vim-commentary'
 
 "==================== Display Indent: vim-indent-guides ===================="
 " Usage: <leader> ig
@@ -207,7 +206,6 @@ syn on
 filetype plugin indent on    " required
 
 "==================== Browsing C Code: Cscope ===================="
-
 if has("cscope")
   set csprg=cscope
   set csto=1
@@ -319,7 +317,6 @@ map <Leader>x :call RangerExplorer()<CR>
 
 "==================== To Edit crontab ===================="
 au FileType crontab setlocal bkc=yes
-
 
 "==================== Customized Color ===================="
 hi Pmenu                    ctermfg=14 ctermbg=242
