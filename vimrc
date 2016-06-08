@@ -64,6 +64,9 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
+"==================== L9 ===================="
+Plugin 'L9'
+
 "==================== Line Number: numbers ===================="
 Plugin 'myusuf3/numbers.vim'
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
