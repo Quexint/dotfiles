@@ -33,6 +33,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+"==================== Markdown Support ===================="
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
 "==================== Status Bar: Airline ===================="
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
