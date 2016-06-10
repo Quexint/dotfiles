@@ -36,6 +36,7 @@ Plugin 'VundleVim/Vundle.vim'
 "==================== Markdown Support ===================="
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
 
 "==================== Status Bar: Airline ===================="
 Plugin 'vim-airline/vim-airline'
