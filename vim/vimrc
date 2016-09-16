@@ -1,0 +1,177 @@
+set nocompatible               " be iMproved
+filetype off                   " required!
+let mapleader=","              " Change mapleader
+
+" Vundle Plugins {
+	if filereadable(expand('~/.dotfiles/vim/vimrc.bundles'))
+		source ~/.dotfiles/vim/vimrc.bundles
+	endif
+" }
+
+" Basic Setting {
+	set showcmd
+	set showmatch
+	set cursorline
+	set mouse=a
+	set backspace=indent,eol,start
+
+	set tags=tags;
+
+	set iskeyword-=.                    " '.' is an end of word designator
+	set iskeyword-=#                    " '#' is an end of word designator
+	set iskeyword-=-                    " '-' is an end of word designator
+
+	set autoread " auto read when file is changed from outside
+
+	set clipboard^=unnamed,unnamedplus  " share clipboard with system side
+" }
+
+" Searching {
+	set incsearch           " move to matched pattern
+	set hlsearch            " search highlighting
+	set ignorecase		    " ignore case
+	set smartcase		    " ignore case if search pattern is all lowercase
+" }
+
+" Encoding {
+	scriptencoding utf-8
+
+	set fileformat=unix
+	set fileformats=unix,dos
+
+	set encoding=utf-8
+
+	set fileencoding=utf-8
+	set fileencodings=ucs-bom,utf-8,big5,cp936,gb18030,latin1
+" }
+
+
+" User Interface {
+	set showmode		    " show current mode
+	set ruler		        " show the cursor position all the time
+	set number              " line number
+	set showmatch		    " cursor shows matching bracket
+
+	set foldmethod=syntax
+	set foldlevelstart=20
+
+	" Colorsheme {
+		colorscheme default
+		set background=dark
+
+		" Make the 81st column stand out {
+			highlight ColorColumn ctermbg=White ctermfg=Black
+			call matchadd('ColorColumn', '\%81v', 100)
+		" }
+
+		" Highlight matches when jumping to next {
+			function! HLNext (blinktime)
+				highlight RedOnRed ctermfg=red ctermbg=red
+				let [bufnum, lnum, col, off] = getpos('.')
+				let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+				echo matchlen
+				let ring_pat = (lnum > 1 ? '\%'.(lnum-1).'l\%>'.max([col-4,1]) .'v\%<'.(col+matchlen+3).'v.\|' : '')
+							\ . '\%'.lnum.'l\%>'.max([col-4,1]) .'v\%<'.col.'v.'
+							\ . '\|'
+							\ . '\%'.lnum.'l\%>'.max([col+matchlen-1,1]) .'v\%<'.(col+matchlen+3).'v.'
+							\ . '\|'
+							\ . '\%'.(lnum+1).'l\%>'.max([col-4,1]) .'v\%<'.(col+matchlen+3).'v.'
+				let ring = matchadd('RedOnRed', ring_pat, 101)
+				redraw
+				exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+				call matchdelete(ring)
+				redraw
+			endfunction
+		" }
+
+		" Always turn on syntax highlighting for diffs {
+			augroup PatchDiffHighlight
+				autocmd!
+				autocmd FileType  diff   syntax enable
+			augroup END
+		" }
+
+		" Customized Color {
+			hi Pmenu                    ctermfg=14 ctermbg=242
+			hi PmenuSel                 ctermfg=14 ctermbg=1
+			hi PmenuSbar                ctermfg=14 ctermbg=0
+			hi SpellBad ctermbg=1
+		" }
+	" }
+" }
+
+" Programming {
+	set autoindent		    " auto indentation
+	set copyindent		    " copy the previous indentation on autoindenting
+	set smarttab		    " insert tabs on the start of a line according to
+													" context
+	set noexpandtab
+
+	set softtabstop=2
+	set tabstop=2
+	set shiftwidth=2
+
+	au FileType crontab setlocal bkc=yes
+" }
+
+" Key mapping {
+	" Move between wrapped line
+	map <Down> g<Down>
+	map <Up> g<Up>
+	nnoremap j gj
+	nnoremap k gk
+
+	"" copy / paste
+	vmap <Leader>c "*y
+	nmap <Leader>p "*p
+
+	" Hotkey for Make {
+		map<F3> :call F3_Compile()<CR>
+		imap<F3> jk<F3>
+
+		function F3_Compile()
+			:w
+			if filereadable("Makefile") || filereadable("makefile")
+				:make
+			else
+				:make "%<" CFLAGS="-Wall -Wshadow -g -O2 -fno-builtin -std=c11" CXXFLAGS="-Wall -Wshadow -g -O2 -std=c++11"
+			endif
+			:cl
+		endfunction
+	" }
+
+	map<F4> :cp<CR>
+	imap<F4> jk<F4>
+
+	map<F5> :cn<CR>
+	imap<F5> jk<F5>
+
+	map<F6> :!./%< <CR>
+	imap<F6> jk<F6>
+
+	imap <C-d> jkddi
+
+	inoremap jk <ESC>
+	inoremap <esc> <nop>
+
+	" Close Quickfix window (,qq)
+	map <leader>qq :bd<CR>
+
+	" Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
+	map <C-j> <C-W>j
+	map <C-k> <C-W>k
+	map <C-H> <C-W>h
+	map <C-L> <C-W>l
+
+	" Toggle show tabs and trailing spaces (,n)
+	set lcs=tab:›\ ,trail:·,eol:␍,nbsp:_
+	set fcs=fold:-
+	nnoremap <silent> <leader>n :set nolist!<CR>
+
+	" Function Folding
+	inoremap <F9> <C-O>zA
+	nnoremap <F9> zA
+	onoremap <F9> <C-C>zA
+	vnoremap <F9> zf
+" }
+

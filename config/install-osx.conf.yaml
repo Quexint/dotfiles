@@ -1,0 +1,53 @@
+- defaults:
+    link:
+        relink: true
+    shell:
+        stdout: true
+        stderr: true
+
+- clean: ['~']
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
+# Homebrew
+- shell:
+  - [ test -e /usr/local/bin/brew || ~/.dotfiles/config/install-homebrew.sh , Installing homebrew ]
+  - [ brew tap homebrew/bundle , Installing homebrew-bundle ]
+  - [ brew bundle --file=~/.dotfiles/package_manager/Brewfile, Installing homebrew formulae ]
+
+# Dependency
+- shell:
+  - [ easy_install pip , Installing PIP ]
+  - [ easy_install pygments , Installing Pygmentize ]
+
+# Oh-my-zsh
+- shell:
+  - [ test -d $HOME/.oh-my-zsh || ~/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
+  - [ sudo chsh -s /bin/zsh , Change default shell to zsh ]
+  - [ rm $HOME/.zshrc , Removing default zshrc ]
+- link:
+  /usr/local/share/zsh/site-functions/prompt_pure_setup: zsh/pure_theme/pure.zsh
+  /usr/local/share/zsh/site-functions/async: zsh/pure_theme/async.zsh
+  ~/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
+
+# Linking
+- link:
+    ~/bin: bin
+    ~/ump.sh: bin/upm/upm.sh
+    ~/.zshrc: zsh/zshrc
+    ~/.gdbinit: gdb-dashboard/.gdbinit
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.octaverc: octaverc
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vim/vimrc
+
+# Vim
+- shell:
+  - [ test -d $HOME/.vim/bundle/Vundle.vim || hub clone VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim , Cloning Vundle ]
+  - [ vim +PluginInstall +qall , Installing Vim Plugins ]
+
+# karabiner
+- shell:
+    - [. karabiner.sh, setup karabiner's config]

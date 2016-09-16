@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [[ "$OSTYPE" == darwin* ]]; then
+    CONFIG="config/install-osx.conf.yaml"
+elif [[ "$OSTYPE" == linux* ]]; then
+    CONFIG="config/install-linux.conf.yaml"
+else
+    echo "[ERROR] unkown OSTYPE: $OSTYPE"
+    exit 1
+fi
+
+
+DOTBOT_DIR="dotbot"
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

@@ -4,26 +4,7 @@ There are my preferred settings of zsh, gdb, vim, git, and octave.
 
 Feel free to reference the files to learn how to set and use interesting plugins.
 
-I always use Mac OS X and CentOS, so I will keep it can run on these two systems.
-
-## Files
-
-- `aliases`: Dir navigation && Functions
-  - `copycode`: Highlighted the source code and copy into the clipboard.
-  - `update`: Update Mac App Store, Homebrew, NPM, Gem in **One Command**.
-- `bootstrap.sh`: Backup the old setting and automatically install the repo.
-- `env.sh`: Set programming languages path.
-- `gdbinit`: Very powerful gdb-dashboard from [cyrus-and/gdb-dashboard](https://github.com/cyrus-and/gdb-dashboard)
-- `gitignore_global`: Default ignored files.
-- `hacker_scripts`: Always use these scripts.
-- `octaverc`: octave settings
-- `Readme.md`
-- `vimrc`: Vim settings
-  - Status Bar, code snips, file management, git hotkey, code completement, some c support, and hotkeys.
-- `zshrc`: Environment Varibles and Zsh Plugins
-  - Wrong commmands will be filtered out command history.
-  - Customized Prompt.
-- `UltiSnips`: Codesnips folder in Vim
+I always use Mac OS X and CentOS, so I will keep it can run on these systems.
 
 ## Installation
 
@@ -39,10 +20,11 @@ CentOS 7: `yum install ctags zsh hg tree libxml2 git vim; easy_install pygments`
 
 ### Automated Installation
 
-**Install**: `bash < <(curl https://raw.githubusercontent.com/Quexint/dotfiles/master/bootstrap.sh)`
+**Install**: `git clone --depth=1 --recursive https://github.com/Quexint/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 
 ## References
 
+- [Github dotfiles](https://dotfiles.github.io/)
 - [A lot of dotfiles Repo](https://github.com/search?o=desc&q=dotfiles&s=stars&type=Repositories&utf8=%E2%9C%93)
 
 ## License

@@ -1,0 +1,9 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "gdb-dashboard"]
+	path = gdb-dashboard
+	url = https://github.com/cyrus-and/gdb-dashboard
+[submodule "zsh/pure_theme"]
+	path = zsh/pure_theme
+	url = https://github.com/sindresorhus/pure

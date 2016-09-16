@@ -1,0 +1,12 @@
+function load()
+{
+	if [[ $1 == "basic" ]]; then
+		PATH=$MY_ZSH_PURE_PATH
+		source ~/.zshrc
+	fi
+	if [[ $1 == "anaconda" ]]; then
+		PATH=$MY_ZSH_PURE_PATH
+		source ~/.zshrc
+		PATH="$HOME/anaconda3/bin:$PATH"
+	fi
+}

@@ -1,0 +1,13 @@
+[user]
+	name = MingChia Chung
+	email = Quexint@gmail.com
+[core]
+  excludesfile = /Users/Quexint/.gitignore_global
+	editor = vim
+	quotepath = false
+[github]
+	user = Quexint
+[push]
+	default = simple
+[color]
+	ui = auto

@@ -29,68 +29,122 @@
 # For more information, please refer to <http://unlicense.org/>
 
 import os
+import platform
 import ycm_core
 
 # These are the compilation flags that will be used in case there's no
 # compilation database set (by default, one is not set).
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
-'-Wall',
-'-Wextra',
-'-Werror',
-'-Wc++98-compat',
-'-Wno-long-long',
-'-Wno-variadic-macros',
-'-fexceptions',
-'-DNDEBUG',
-# You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM
-# source code needs it.
-'-DUSE_CLANG_COMPLETER',
-# THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
-# language to use when compiling headers. So it will guess. Badly. So C++
-# headers will be compiled as C headers. You don't want that so ALWAYS specify
-# a "-std=<something>".
-# For a C project, you would set this to something like 'c99' instead of
-# 'c++11'.
-'-std=c++11',
-# ...and the same thing goes for the magic -x option which specifies the
-# language that the files to be compiled are written in. This is mostly
-# relevant for c++ headers.
-# For a C project, you would set this to 'c' instead of 'c++'.
-'-x',
-'c++',
-'-isystem',
-'../BoostParts',
-'-isystem',
-# This path will only work on OS X, but extra paths that don't exist are not
-# harmful
-'/System/Library/Frameworks/Python.framework/Headers',
-'-isystem',
-'../llvm/include',
-'-isystem',
-'../llvm/tools/clang/include',
-'-I',
-'.',
-'-I',
-'./ClangCompleter',
-'-isystem',
-'./tests/gmock/gtest',
-'-isystem',
-'./tests/gmock/gtest/include',
-'-isystem',
-'./tests/gmock',
-'-isystem',
-'./tests/gmock/include',
+    '-Wall',
+    '-Wextra',
+    '-Wno-long-long',
+    '-Wno-variadic-macros',
+    '-fexceptions',
+    '-mno-sse',
+    '-DNDEBUG',
+    # THIS IS IMPORTANT! Without a "-std=<something>" flag, clang won't know which
+    # language to use when compiling headers. So it will guess. Badly. So C++
+    # headers will be compiled as C headers. You don't want that so ALWAYS specify
+    # a "-std=<something>".
+    # For a C project, you would set this to something like 'c99' instead of
+    # 'c++11'.
+    '-std=gnu++1y',
+    # use GNU standard libarary
+    '-stdlib=libstdc++',
+    # ...and the same thing goes for the magic -x option which specifies the
+    # language that the files to be compiled are written in. This is mostly
+    # relevant for c++ headers.
+    # For a C project, you would set this to 'c' instead of 'c++'.
+    '-x',
+    'c++',
+    '-I',
+    '.',
+]
+
+if platform.system() == 'Darwin':
+    flags += [
+        '-isystem',
+        '/usr/local/opt/llvm/include/c++/v1',
+        '-isystem',
+        '/usr/local/opt/llvm/include/llvm-c',
+        '-isystem',
+        '/usr/local/opt/llvm/include/clang-c',
+        # Homebrew g++ 6.1.0 @ Mac OS X
+        '-isystem',
+        '/usr/local/opt/gcc6/include/c++/6.1.0',
+        '-isystem',
+        '/usr/local/opt/gcc6/include/c++/6.1.0/x86_64-apple-darwin15.5.0',
+        '-isystem',
+        '/usr/local/opt/gcc6/include/c++/6.1.0/backward',
+        '-isystem',
+        '/usr/local/opt/gcc6/lib/gcc/6/gcc/x86_64-apple-darwin15.5.0/6.1.0/include',
+        '-isystem',
+        '/usr/local/opt/gcc6/lib/gcc/6/gcc/x86_64-apple-darwin15.5.0/6.1.0/include-fixed',
+        '-isystem',
+        '/usr/local/opt/gcc6/include',
+        '-isystem',
+        '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/usr/include',
+        '-isystem',
+        '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks',
+        # python on mac
+        '-isystem',
+        '/System/Library/Frameworks/Python.framework/Headers',
+        # Xcode clang @ Mac OS X
+        '-isystem',
+        '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1',
+        '-isystem',
+        '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.3.0/include',
+        '-isystem',
+        '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
+        '-isystem',
+        '/usr/include',
+    ]
+elif platform.linux_distribution() == ('debian', 'jessie/sid', ''):
+    # g++ on ubuntu 14.04
+    flags += [
+        '-isystem',
+        '/usr/include/c++/4.8',
+        '-isystem',
+        '/usr/include/x86_64-linux-gnu/c++/4.8',
+        '-isystem',
+        '/usr/include/c++/4.8/backward',
+        '-isystem',
+        '/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
+        '-isystem',
+        '/usr/local/include',
+        '-isystem',
+        '/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed',
+    ]
+elif platform.linux_distribution() == ('Ubuntu', '16.04', 'xenial'):
+    # g++ on ubuntu 16.04
+    flags += [
+        '-isystem',
+        '/usr/include/c++/5',
+        '-isystem',
+        '/usr/include/x86_64-linux-gnu/c++/5',
+        '-isystem',
+        '/usr/include/c++/5/backward',
+        '-isystem',
+        '/usr/lib/gcc/x86_64-linux-gnu/5/include',
+        '-isystem',
+        '/usr/local/include',
+        '-isystem',
+        '/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed',
+    ]
+
+flags += [
+    # shared
+    '-isystem',
+    '/usr/include/x86_64-linux-gnu',
+    '-isystem',
+    '/usr/include',
 ]
 
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
 # compile_commands.json file to use that instead of 'flags'. See here for
 # more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
-#
-# You can get CMake to generate this file for you by adding:
-#   set( CMAKE_EXPORT_COMPILE_COMMANDS 1 )
-# to your CMakeLists.txt file.
 #
 # Most projects will NOT need to set this to anything; you can just change the
 # 'flags' list of compilation flags. Notice that YCM itself uses that approach.

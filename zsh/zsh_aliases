@@ -1,0 +1,8 @@
+# Dir Navigation
+source $MY_ZSH_ENV_PATH/local.aliases
+
+# Functions
+# mkd xxx yyy: create the folder xxx and yyy
+# mkd "xxx yyy": create the folder called `xxx yyy`
+function mkd() { mkdir -p "$@" && cd "$_"; }
+function copy_code() { highlight -O rtf "$@" | pbcopy; }
