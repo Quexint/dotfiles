@@ -17,11 +17,10 @@
 # Oh-my-zsh
 - shell:
   - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
-  - [ sudo chsh -s /bin/zsh , Change default shell to zsh ]
+  - [ chsh -s /bin/zsh , Change default shell to zsh ]
   - [ rm $HOME/.zshrc , Removing default zshrc ]
 - link:
-  /usr/local/share/zsh/site-functions/prompt_pure_setup: zsh/pure_theme/pure.zsh
-  /usr/local/share/zsh/site-functions/async: zsh/pure_theme/async.zsh
+  $HOME/.zfunctions: zsh/zfunctions
   $HOME/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
 
 # Linking
