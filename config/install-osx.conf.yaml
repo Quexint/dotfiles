@@ -5,16 +5,16 @@
         stdout: true
         stderr: true
 
-- clean: ['~']
+- clean: ['$HOME']
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
 
 # Homebrew
 - shell:
-  - [ test -e /usr/local/bin/brew || ~/.dotfiles/config/install-homebrew.sh , Installing homebrew ]
+  - [ test -e /usr/local/bin/brew || $HOME/.dotfiles/config/install-homebrew.sh , Installing homebrew ]
   - [ brew tap homebrew/bundle , Installing homebrew-bundle ]
-  - [ brew bundle --file=~/.dotfiles/package_manager/Brewfile, Installing homebrew formulae ]
+  - [ brew bundle --file=$HOME/.dotfiles/package_manager/Brewfile, Installing homebrew formulae ]
 
 # Dependency
 - shell:
@@ -23,29 +23,29 @@
 
 # Oh-my-zsh
 - shell:
-  - [ test -d $HOME/.oh-my-zsh || ~/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
+  - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
   - [ sudo chsh -s /bin/zsh , Change default shell to zsh ]
   - [ rm $HOME/.zshrc , Removing default zshrc ]
 - link:
   /usr/local/share/zsh/site-functions/prompt_pure_setup: zsh/pure_theme/pure.zsh
   /usr/local/share/zsh/site-functions/async: zsh/pure_theme/async.zsh
-  ~/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
+  $HOME/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
 
 # Linking
 - link:
-    ~/bin: bin
-    ~/ump.sh: bin/upm/upm.sh
-    ~/.zshrc: zsh/zshrc
-    ~/.gdbinit: gdb-dashboard/.gdbinit
-    ~/.gitconfig: gitconfig
-    ~/.gitignore_global: gitignore_global
-    ~/.octaverc: octaverc
-    ~/.tmux.conf: tmux.conf
-    ~/.vimrc: vim/vimrc
+    $HOME/bin: bin
+    $HOME/ump.sh: bin/upm/upm.sh
+    $HOME/.zshrc: zsh/zshrc
+    $HOME/.gdbinit: gdb-dashboard/.gdbinit
+    $HOME/.gitconfig: gitconfig
+    $HOME/.gitignore_global: gitignore_global
+    $HOME/.octaverc: octaverc
+    $HOME/.tmux.conf: tmux.conf
+    $HOME/.vimrc: vim/vimrc
 
 # Vim
 - shell:
-  - [ test -d $HOME/.vim/bundle/Vundle.vim || ~/.dotfiles/config/install-vim.sh , Installing Vundle ]
+  - [ test -d $HOME/.vim/bundle/Vundle.vim || $HOME/.dotfiles/config/install-vim.sh , Installing Vundle ]
   - [ vim +PluginInstall +qall , Installing Vim Plugins ]
 
 # karabiner
