@@ -20,7 +20,7 @@ CentOS 7: `yum install ctags zsh hg tree libxml2 git vim; easy_install pygments`
 
 ### Automated Installation
 
-**Install**: `git clone --depth=1 --recursive https://github.com/Quexint/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
+**Install**: `git clone --depth=1 --recursive https://github.com/Quexint/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles && ./install`
 
 ## References
 
