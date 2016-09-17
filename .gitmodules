@@ -7,3 +7,6 @@
 [submodule "zsh/pure_theme"]
 	path = zsh/pure_theme
 	url = https://github.com/sindresorhus/pure
+[submodule "bin/upm"]
+	path = bin/upm
+	url = https://github.com/Quexint/upm
