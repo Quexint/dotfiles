@@ -13,7 +13,6 @@
 # Oh-my-zsh
 - shell:
     - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
-    - [ chsh -s /bin/zsh , Change default shell to zsh ]
     - [ rm $HOME/.zshrc , Remove default zshrc ]
     - [ mkdir -p $HOME/.oh-my-zsh/custom/themes , Make the dir of oh-my-zsh themes ]
 - link:
@@ -36,3 +35,14 @@
 - shell:
     - [ test -d $HOME/.vim/bundle/Vundle.vim || $HOME/.dotfiles/config/install-vim.sh , Installing Vundle ]
     - [ vim +PluginInstall +qall , Installing Vim Plugins ]
+
+# Post Installation
+- shell:
+    -
+      command: chsh -s /bin/zsh
+      stdin: true
+      stdout: true
+    -
+      comman: echo "You need to build YCM."
+      stdin: true
+      stdout: true
