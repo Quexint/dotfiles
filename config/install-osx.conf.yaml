@@ -28,7 +28,7 @@
 # Linking
 - link:
     $HOME/bin: bin
-    $HOME/ump.sh: bin/upm/upm.sh
+    $HOME/upm.sh: bin/upm/upm.sh
     $HOME/.zshrc: zsh/zshrc
     $HOME/.gdbinit: gdb-dashboard/.gdbinit
     $HOME/.gitconfig: gitconfig
