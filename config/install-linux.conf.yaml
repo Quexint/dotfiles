@@ -10,15 +10,12 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
 
-# Dependency
-- shell:
-  - [ easy_install pygments , Installing Pygmentize ]
-
 # Oh-my-zsh
 - shell:
   - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
   - [ chsh -s /bin/zsh , Change default shell to zsh ]
-  - [ rm $HOME/.zshrc , Removing default zshrc ]
+  - [ rm $HOME/.zshrc , Remove default zshrc ]
+  - [ mkdir -p ~/.oh-my-zsh/custom/themes , Make the dir of oh-my-zsh themes ]
 - link:
   $HOME/.zfunctions: zsh/zfunctions
   $HOME/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
@@ -26,6 +23,7 @@
 # Linking
 - link:
     $HOME/bin: bin
+    $HOME/ump.sh: bin/upm/upm.sh
     $HOME/.zshrc: zsh/zshrc
     $HOME/.gdbinit: gdb-dashboard/.gdbinit
     $HOME/.gitconfig: gitconfig
