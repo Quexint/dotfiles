@@ -37,5 +37,5 @@
 
 # Vim
 - shell:
-  - [ test -d $HOME/.vim/bundle/Vundle.vim || git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim , Cloning Vundle ]
+  - [ test -d $HOME/.vim/bundle/Vundle.vim || ~/.dotfiles/config/install-vim.sh , Installing Vundle ]
   - [ vim +PluginInstall +qall , Installing Vim Plugins ]
