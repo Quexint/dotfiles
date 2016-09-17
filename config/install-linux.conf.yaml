@@ -42,7 +42,4 @@
       command: chsh -s /bin/zsh
       stdin: true
       stdout: true
-    -
-      comman: echo "You need to build YCM."
-      stdin: true
-      stdout: true
+    - [ echo , You need to build YCM. ]
