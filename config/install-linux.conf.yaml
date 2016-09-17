@@ -12,13 +12,13 @@
 
 # Oh-my-zsh
 - shell:
-  - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
-  - [ chsh -s /bin/zsh , Change default shell to zsh ]
-  - [ rm $HOME/.zshrc , Remove default zshrc ]
-  - [ mkdir -p ~/.oh-my-zsh/custom/themes , Make the dir of oh-my-zsh themes ]
+    - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/config/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
+    - [ chsh -s /bin/zsh , Change default shell to zsh ]
+    - [ rm $HOME/.zshrc , Remove default zshrc ]
+    - [ mkdir -p $HOME/.oh-my-zsh/custom/themes , Make the dir of oh-my-zsh themes ]
 - link:
-  $HOME/.zfunctions: zsh/zfunctions
-  $HOME/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
+    $HOME/.zfunctions: zsh/zfunctions
+    $HOME/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
 
 # Linking
 - link:
@@ -34,5 +34,5 @@
 
 # Vim
 - shell:
-  - [ test -d $HOME/.vim/bundle/Vundle.vim || $HOME/.dotfiles/config/install-vim.sh , Installing Vundle ]
-  - [ vim +PluginInstall +qall , Installing Vim Plugins ]
+    - [ test -d $HOME/.vim/bundle/Vundle.vim || $HOME/.dotfiles/config/install-vim.sh , Installing Vundle ]
+    - [ vim +PluginInstall +qall , Installing Vim Plugins ]
