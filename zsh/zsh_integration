@@ -1,5 +1,5 @@
 #======================== AUTOJUMP ========================
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+[[ -e $(which brew) ]] && [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 #======================== hub ========================
 if [[ -e /usr/local/bin/hub ]]; then
