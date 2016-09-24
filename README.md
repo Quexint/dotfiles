@@ -14,9 +14,9 @@ I always use Mac OS X and CentOS, so I will keep it can run on these systems.
 - **numbers.vim**: Vim >= 7.3
 - **YouCompleteMe**: Vim >= 7.3.598
 
-Mac OS X: `brew install vim ctags-exuberant zsh mercurial tree libxml2 thefuck && easy_install pygments`
+Mac OS X: `brew install autojump vim ctags-exuberant zsh mercurial tree libxml2 thefuck && easy_install pygments`
 
-CentOS 7: `sudo yum install automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel cmake ctags zsh hg tree libxml2 git vim vim-X11; easy_install pygments`
+CentOS 7: `sudo yum install autojump automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel cmake ctags zsh hg tree libxml2 git vim vim-X11; easy_install pygments`
 
 ### Automated Installation
 
