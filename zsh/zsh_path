@@ -1,8 +1,13 @@
 # Csharp PATH
 export MONO_GAC_PREFIX="/usr/local"
 
+# Yarn PATH
+if [[ -d "$HOME/.yarn/bin" ]]; then
+	export PATH="$HOME/.yarn/bin:$PATH"
+fi
+
 # GO PATH
-if [[ -f "/usr/local/opt/go/libexec/bin" ]]; then
+if [[ -d "/usr/local/opt/go/libexec/bin" ]]; then
   export PATH=$PATH:/usr/local/opt/go/libexec/bin
 fi
 

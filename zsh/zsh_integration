@@ -14,3 +14,5 @@ else
   curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 fi
 
+#======================== zsh-syntax-highlighting ========================
+[[ -e /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
