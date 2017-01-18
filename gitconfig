@@ -2,7 +2,7 @@
 	name = MingChia Chung
 	email = Quexint@gmail.com
 [core]
-  excludesfile = /Users/Quexint/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 	quotepath = false
 [github]
