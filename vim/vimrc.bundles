@@ -226,8 +226,6 @@
             au BufEnter /* call LoadCscope()
         endif
 
-        nmap <F7> :!ctags -R <CR> :!cscope -Rbq -P. <CR> :cs reset<CR>
-
         nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
         nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
         nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>

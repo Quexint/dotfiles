@@ -1,5 +1,9 @@
 *~
 .DS_Store
+._.DS_Store
+cscope.po.out
+cscope.out
+cscope.in.out
 Session.vim
 *.dSYM
 *.pyc
