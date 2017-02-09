@@ -128,8 +128,9 @@ let mapleader=","              " Change mapleader
     nnoremap k gk
 
     "" copy / paste
-    vmap <Leader>c "*y
-    nmap <Leader>p "*p
+    nmap <Leader>c "+yy
+    vmap <Leader>c "+y
+    nmap <Leader>p "+p
 
     " Hotkey for Make {
         map<F3> :call F3_Compile()<CR>

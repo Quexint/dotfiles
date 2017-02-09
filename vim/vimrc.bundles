@@ -13,12 +13,6 @@
 
 " Bundle {
     " Style {
-        " Linux Kernel Code Viewing {
-            Plugin 'vivien/vim-linux-coding-style'
-            nnoremap <silent> <leader>a :LinuxCodingStyle<cr>
-            let g:linuxsty_patterns = [ "$HOME/linux-stable" ]
-        " }
-
         " Status Bar - Airline {
             Plugin 'vim-airline/vim-airline'
             Plugin 'vim-airline/vim-airline-themes'
@@ -37,7 +31,8 @@
             nmap <leader>7 <Plug>AirlineSelectTab7
             nmap <leader>8 <Plug>AirlineSelectTab8
             nmap <leader>9 <Plug>AirlineSelectTab9
-            nnoremap <Leader>b :bd<CR>
+            nnoremap <Leader>ll :bn<CR>
+            nnoremap <Leader>hh :bp<CR>
         " }
 
         " indentLine - Show Tab / Leading Spaces {
@@ -85,6 +80,15 @@
 
         " L9 {
             Plugin 'L9'
+        " }
+
+        " Search Tool - Ack {
+            Plugin 'mileszs/ack.vim'
+            if executable('ag')
+                let g:ackprg = 'ag --vimgrep --ignore-dir docs --ignore-dir doc --ignore-dir unit-test'
+            endif
+            cnoreabbrev Ack Ack!
+            nnoremap <Leader>a :Ack!<Space>
         " }
 
         " File Mangement - Nerdtree {
@@ -232,6 +236,7 @@
         nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
         nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
         nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+        nnoremap <silent> <leader>f :cs find f<SPACE>
         nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
         nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
         " }
