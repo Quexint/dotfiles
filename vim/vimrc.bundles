@@ -31,8 +31,8 @@
             nmap <leader>7 <Plug>AirlineSelectTab7
             nmap <leader>8 <Plug>AirlineSelectTab8
             nmap <leader>9 <Plug>AirlineSelectTab9
-            nnoremap <Leader>ll :bn<CR>
-            nnoremap <Leader>hh :bp<CR>
+            nnoremap <Leader>bl :bn<CR>
+            nnoremap <Leader>bh :bp<CR>
         " }
 
         " indentLine - Show Tab / Leading Spaces {
@@ -76,6 +76,7 @@
             let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
             let g:UltiSnipsEditSplit="vertical"
             let g:ycm_min_num_of_chars_for_completion = 1
+            let g:ycm_autoclose_preview_window_after_completion = 1
         " }
 
         " L9 {
@@ -86,6 +87,8 @@
             Plugin 'mileszs/ack.vim'
             if executable('ag')
                 let g:ackprg = 'ag --vimgrep --ignore-dir docs --ignore-dir doc --ignore-dir unit-test'
+                set grepprg=ag\ --vimgrep\ --ignore-dir\ docs\ --ignore-dir\ doc\ --ignore-dir\ unit-test
+                set grepformat=%f:%l:%c:%m,%f:%l:%m
             endif
             cnoreabbrev Ack Ack!
             nnoremap <Leader>a :Ack!<Space>
@@ -147,12 +150,17 @@
             " make YCM compatible with UltiSnips (using supertab)
             let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
             let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-            let g:SuperTabDefaultCompletionType = '<C-n>'
+            let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
 
             let g:ycm_global_ycm_extra_conf = '~/.dotfiles/vim/ycm_extra_conf.py'
             nnoremap <C-e> :YcmDiags<CR> <C-j> :lnext<CR>
             nnoremap ]a     :lnext<CR>
             nnoremap [a     :lprevious<CR>
+            let g:ycm_autoclose_preview_window_after_completion = 1
+            let g:ycm_collect_identifiers_from_tags_files = 1
+            let g:ycm_cache_omnifunc=0
+            let g:ycm_seed_identifiers_with_syntax = 1
+
         " }
 
         " Comment the code - vim-commnetary {
@@ -230,15 +238,15 @@
             au BufEnter /* call LoadCscope()
         endif
 
-        nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-        nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+        nmap <leader>cs :cs find s <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>cg :cs find g <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>cc :cs find c <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>ct :cs find t <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>ce :cs find e <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>cf :cs find f <C-R>=expand("<cfile>")<CR><CR>
         nnoremap <silent> <leader>f :cs find f<SPACE>
-        nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-        nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+        nmap <leader>ci :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+        nmap <leader>cd :cs find d <C-R>=expand("<cword>")<CR><CR>
         " }
     " }
 

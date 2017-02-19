@@ -162,7 +162,7 @@ let mapleader=","              " Change mapleader
     inoremap <esc> <nop>
 
     " Close Quickfix window (,qq)
-    map <leader>qq :bd<CR>
+    map <leader>bq :bd<CR>
 
     " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
     map <C-j> <C-W>j
