@@ -36,6 +36,9 @@
     $HOME/.octaverc: octaverc
     $HOME/.tmux.conf: tmux.conf
     $HOME/.vimrc: vim/vimrc
+    $HOME/.fzf: fzf
+- shell:
+    - [ $HOME/.fzf/install , Installing Fuzzy Finder ]
 
 # Vim
 - shell:

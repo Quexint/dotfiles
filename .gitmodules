@@ -10,3 +10,6 @@
 [submodule "bin/upm"]
 	path = bin/upm
 	url = https://github.com/Quexint/upm
+[submodule "fzf"]
+	path = fzf
+	url = https://github.com/junegunn/fzf

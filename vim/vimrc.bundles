@@ -65,6 +65,22 @@
     " }
 
     " Developer Tools {
+        " Vim Tmux Interact - Vimux {
+            Plugin 'benmills/vimux'
+        " }
+
+        " Vim Tmux Navigator {
+            Plugin 'christoomey/vim-tmux-navigator'
+        " }
+
+        " fuzzy finder - fzf {
+            Plugin 'junegunn/fzf'
+            Plugin 'junegunn/fzf.vim'
+            nnoremap <silent> <leader>f :Files<CR>
+            imap <c-x><c-l> <plug>(fzf-complete-line)
+
+        " }
+
         " Code snips: ultisnips {
             Plugin 'SirVer/ultisnips'
             Plugin 'honza/vim-snippets'
@@ -244,7 +260,6 @@
         nmap <leader>ct :cs find t <C-R>=expand("<cword>")<CR><CR>
         nmap <leader>ce :cs find e <C-R>=expand("<cword>")<CR><CR>
         nmap <leader>cf :cs find f <C-R>=expand("<cfile>")<CR><CR>
-        nnoremap <silent> <leader>f :cs find f<SPACE>
         nmap <leader>ci :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
         nmap <leader>cd :cs find d <C-R>=expand("<cword>")<CR><CR>
         " }

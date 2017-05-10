@@ -132,6 +132,9 @@ let mapleader=","              " Change mapleader
     vmap <Leader>c "+y
     nmap <Leader>p "+p
 
+    " Prompt for a command to run
+    map <Leader>vp :VimuxPromptCommand<CR>
+
     " Hotkey for Make {
         map<F3> :call F3_Compile()<CR>
         imap<F3> jk<F3>
@@ -161,14 +164,8 @@ let mapleader=","              " Change mapleader
     inoremap jk <ESC>
     inoremap <esc> <nop>
 
-    " Close Quickfix window (,qq)
-    map <leader>bq :bd<CR>
-
-    " Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
-    map <C-j> <C-W>j
-    map <C-k> <C-W>k
-    map <C-H> <C-W>h
-    map <C-L> <C-W>l
+    " Close Quickfix window (C-c)
+    map <C-c> :bd<CR>
 
     " Toggle show tabs and trailing spaces (,n)
     set lcs=tab:›\ ,trail:·,eol:␍,nbsp:_
