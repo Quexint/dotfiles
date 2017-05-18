@@ -4,9 +4,6 @@
 [submodule "gdb-dashboard"]
 	path = gdb-dashboard
 	url = https://github.com/cyrus-and/gdb-dashboard
-[submodule "zsh/pure_theme"]
-	path = zsh/pure_theme
-	url = https://github.com/sindresorhus/pure
 [submodule "bin/upm"]
 	path = bin/upm
 	url = https://github.com/Quexint/upm
