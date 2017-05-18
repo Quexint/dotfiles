@@ -29,7 +29,7 @@ zshaddhistory () {
 
 #======================== ZSH Theme ========================
 ZSH_THEME="spaceship"
-source "/Users/Quexint/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+source "$ZSH/custom/themes/spaceship.zsh-theme"
 
 autoload -Uz compinit && compinit
 
