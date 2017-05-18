@@ -13,3 +13,6 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf
+[submodule "zsh/spaceship-zsh-theme"]
+	path = zsh/spaceship-zsh-theme
+	url = https://github.com/denysdovhan/spaceship-zsh-theme

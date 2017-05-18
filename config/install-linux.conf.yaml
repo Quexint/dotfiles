@@ -17,7 +17,7 @@
     - [ mkdir -p $HOME/.oh-my-zsh/custom/themes , Make the dir of oh-my-zsh themes ]
 - link:
     $HOME/.zfunctions: zsh/zfunctions
-    $HOME/.oh-my-zsh/custom/themes/pure.zsh-theme: zsh/pure_theme/pure.zsh
+    $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme: zsh/spaceship-zsh-theme/spaceship.zsh
 
 # Linking
 - link:
