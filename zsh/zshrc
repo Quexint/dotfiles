@@ -6,7 +6,7 @@ export EDITOR=vim
 export MY_ZSH_ENV_PATH=$HOME/.dotfiles/zsh
 export MY_ZSH_PURE_PATH=$PATH
 
-plugins=(autojump brew common-aliases docker gem git git-flow npm osx pip pyenv python vagrant zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(autojump brew common-aliases docker gem git git-flow gitfast npm osx pip pyenv python vagrant zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source $MY_ZSH_ENV_PATH/zsh_integration
@@ -28,8 +28,10 @@ zshaddhistory () {
 }
 
 #======================== ZSH Theme ========================
-ZSH_THEME="spaceship"
-source "$ZSH/custom/themes/spaceship.zsh-theme"
+#ZSH_THEME="spaceship"
+#source "$ZSH/custom/themes/spaceship.zsh-theme"
+ZSH_THEME="robbyrussell"
+source "$ZSH/themes/robbyrussell.zsh-theme"
 
 autoload -Uz compinit && compinit
 
