@@ -24,6 +24,7 @@ let mapleader=","              " Change mapleader
     set autoread " auto read when file is changed from outside
 
     set clipboard^=unnamed,unnamedplus  " share clipboard with system side
+    set scrolloff=5
 " }
 
 " Terminal Setting {
