@@ -31,6 +31,7 @@ zshaddhistory () {
 #ZSH_THEME="spaceship"
 #source "$ZSH/custom/themes/spaceship.zsh-theme"
 ZSH_THEME="robbyrussell"
+GIT_PS1_SHOWSTASHSTATE=1
 source "$ZSH/themes/robbyrussell.zsh-theme"
 
 autoload -Uz compinit && compinit
