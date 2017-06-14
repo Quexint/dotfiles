@@ -31,8 +31,8 @@
             nmap <leader>7 <Plug>AirlineSelectTab7
             nmap <leader>8 <Plug>AirlineSelectTab8
             nmap <leader>9 <Plug>AirlineSelectTab9
-            nnoremap <Leader>bl :bn<CR>
-            nnoremap <Leader>bh :bp<CR>
+            nnoremap <Leader>z :bp<CR>
+            nnoremap <Leader>x :bn<CR>
         " }
 
         " indentLine - Show Tab / Leading Spaces {
@@ -274,6 +274,6 @@
             endif
             redraw!
         endfun
-        map <Leader>x :call RangerExplorer()<CR>
+    "    map <Leader>x :call RangerExplorer()<CR>
     " }
 " }
