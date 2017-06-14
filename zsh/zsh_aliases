@@ -11,3 +11,9 @@ if [[ `uname` == "Linux" ]]; then
 fi
 function mkd() { mkdir -p "$@" && cd "$_"; }
 function copy_code() { highlight -O rtf "$@" | pbcopy; }
+
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip'
+alias -s bz2='tar -xjvf'
+alias gsa='git submodule add'
