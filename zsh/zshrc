@@ -35,6 +35,8 @@ GIT_PS1_SHOWSTASHSTATE=1
 source "$ZSH/themes/robbyrussell.zsh-theme"
 PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
 
+bindkey 'jk' vi-cmd-mode
+
 autoload -Uz compinit && compinit
 
 zstyle ':completion:*:' menu yes select
