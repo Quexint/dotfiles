@@ -33,6 +33,7 @@ zshaddhistory () {
 ZSH_THEME="robbyrussell"
 GIT_PS1_SHOWSTASHSTATE=1
 source "$ZSH/themes/robbyrussell.zsh-theme"
+PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
 
 autoload -Uz compinit && compinit
 
