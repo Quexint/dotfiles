@@ -5,7 +5,7 @@
 	excludesfile = ~/.gitignore_global
 	editor = vim
 	quotepath = false
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = ~/.dotfiles/diff-so-fancy/diff-so-fancy | less --tabs=4 -RFX
 [github]
 	user = Quexint
 [push]
@@ -13,8 +13,8 @@
 [color]
 	ui = true
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
+	oldNormal = red bold reverse
+	oldHighlight = red bold 52 reverse
 	newNormal = green bold
 	newHighlight = green bold 22
 [color "diff"]
