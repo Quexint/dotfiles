@@ -16,7 +16,6 @@
     - [ rm $HOME/.zshrc , Remove default zshrc ]
     - [ mkdir -p $HOME/.oh-my-zsh/custom/themes , Make the dir of oh-my-zsh themes ]
 - link:
-    $HOME/.zfunctions: zsh/zfunctions
     $HOME/.oh-my-zsh/custom/themes/spaceship.zsh-theme: zsh/spaceship-zsh-theme/spaceship.zsh
 
 # Linking
@@ -32,6 +31,7 @@
     $HOME/.vimrc: vim/vimrc
     $HOME/.fzf: fzf
 - shell:
+    - [ touch $HOME/.dotfiles/zsh/zsh_aliases, Create empty Local Aliases ]
     - [ $HOME/.fzf/install , Installing Fuzzy Finder ]
 
 # Vim
