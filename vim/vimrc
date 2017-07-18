@@ -25,6 +25,16 @@ let mapleader=","              " Change mapleader
 
     set clipboard^=unnamed,unnamedplus  " share clipboard with system side
     set scrolloff=5
+
+    " Wildmenu
+    if has("wildmenu")
+        set wildignore+=*.a,*.o
+        set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png
+        set wildignore+=.DS_Store,.git,.hg,.svn
+        set wildignore+=*~,*.swp,*.tmp
+        set wildmenu
+        set wildmode=longest,list
+    endif
 " }
 
 " Terminal Setting {
