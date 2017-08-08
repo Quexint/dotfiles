@@ -28,12 +28,15 @@ zshaddhistory () {
 }
 
 #======================== ZSH Theme ========================
-#ZSH_THEME="spaceship"
-#source "$ZSH/custom/themes/spaceship.zsh-theme"
-ZSH_THEME="robbyrussell"
 GIT_PS1_SHOWSTASHSTATE=1
-source "$ZSH/themes/robbyrussell.zsh-theme"
-PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
+if [[ $HOST == "vm-ubuntu" ]]; then
+    ZSH_THEME="robbyrussell"
+    source "$ZSH/themes/robbyrussell.zsh-theme"
+    PROMPT='${ret_status} %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
+else
+    ZSH_THEME="spaceship"
+    source "$ZSH/custom/themes/spaceship.zsh-theme"
+fi
 
 bindkey 'jk' vi-cmd-mode
 
