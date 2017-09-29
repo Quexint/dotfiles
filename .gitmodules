@@ -11,7 +11,7 @@
 	path = fzf
 	url = https://github.com/junegunn/fzf
 [submodule "zsh/spaceship-zsh-theme"]
-	path = zsh/spaceship-zsh-theme
+	path = zsh/themes/spaceship-zsh-theme
 	url = https://github.com/denysdovhan/spaceship-zsh-theme
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
