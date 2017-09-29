@@ -16,3 +16,6 @@
 [submodule "diff-so-fancy"]
 	path = diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy
+[submodule "zsh/themes/powerlevel9k"]
+	path = zsh/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k
