@@ -1,21 +1,21 @@
 [submodule "dotbot"]
-	path = dotbot
+	path = tools/dotbot
 	url = https://github.com/anishathalye/dotbot
 [submodule "gdb-dashboard"]
-	path = gdb-dashboard
+	path = tools/gdb-dashboard
 	url = https://github.com/cyrus-and/gdb-dashboard
 [submodule "bin/upm"]
 	path = bin/upm
 	url = https://github.com/Quexint/upm
 [submodule "fzf"]
-	path = fzf
+	path = tools/fzf
 	url = https://github.com/junegunn/fzf
 [submodule "zsh/spaceship-zsh-theme"]
 	path = zsh/themes/spaceship-zsh-theme
 	url = https://github.com/denysdovhan/spaceship-zsh-theme
-[submodule "diff-so-fancy"]
-	path = diff-so-fancy
-	url = https://github.com/so-fancy/diff-so-fancy
 [submodule "zsh/themes/powerlevel9k"]
 	path = zsh/themes/powerlevel9k
 	url = https://github.com/bhilburn/powerlevel9k
+[submodule "tools/diff-so-fancy"]
+	path = tools/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy

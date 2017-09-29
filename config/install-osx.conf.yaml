@@ -29,15 +29,15 @@
     $HOME/bin: bin
     $HOME/upm.sh: bin/upm/upm.sh
     $HOME/.zshrc: zsh/zshrc
-    $HOME/.gdbinit: gdb-dashboard/.gdbinit
+    $HOME/.gdbinit: tools/gdb-dashboard/.gdbinit
     $HOME/.gitconfig: gitconfig
     $HOME/.gitignore_global: gitignore_global
     $HOME/.octaverc: octaverc
     $HOME/.tmux.conf: tmux.conf
     $HOME/.vimrc: vim/vimrc
-    $HOME/.fzf: fzf
+    $HOME/.fzf: tools/fzf
 - shell:
-    - [ touch $HOME/.dotfiles/zsh/zsh_aliases, Create empty Local Aliases ]
+    - [ touch $HOME/.dotfiles/zsh/local.aliases, Create empty Local Aliases ]
     - [ $HOME/.fzf/install , Installing Fuzzy Finder ]
 
 # Vim
