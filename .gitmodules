@@ -10,12 +10,15 @@
 [submodule "fzf"]
 	path = tools/fzf
 	url = https://github.com/junegunn/fzf
-[submodule "zsh/spaceship-zsh-theme"]
-	path = zsh/themes/spaceship-zsh-theme
-	url = https://github.com/denysdovhan/spaceship-zsh-theme
-[submodule "zsh/themes/powerlevel9k"]
-	path = zsh/themes/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k
 [submodule "tools/diff-so-fancy"]
 	path = tools/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy
+[submodule "zsh/custom/plugins/zsh-autosuggestions"]
+	path = zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/custom/themes/spaceship-zsh-theme"]
+	path = zsh/custom/themes/spaceship-zsh-theme
+	url = https://github.com/denysdovhan/spaceship-zsh-theme
+[submodule "zsh/custom/themes/powerlevel9k"]
+	path = zsh/custom/themes/powerlevel9k
+	url = https://github.com/bhilburn/powerlevel9k
