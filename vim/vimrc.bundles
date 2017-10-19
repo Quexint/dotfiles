@@ -77,7 +77,8 @@
             Plugin 'junegunn/fzf'
             Plugin 'junegunn/fzf.vim'
             nnoremap <silent> <leader>f :Files<CR>
-            imap <c-x><c-l> <plug>(fzf-complete-line)
+            nnoremap <silent> <leader>r :Tags<CR>
+            imap <c-l> <plug>(fzf-complete-line)
 
         " }
 
