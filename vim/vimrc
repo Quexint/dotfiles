@@ -141,7 +141,7 @@ let mapleader=","              " Change mapleader
     "" copy / paste
     nmap <Leader>c "+yy
     vmap <Leader>c "+y
-    nmap <Leader>p "+p
+    nmap <Leader>p "+p<CR>
 
     " Prompt for a command to run
     map <Leader>vp :VimuxPromptCommand<CR>
