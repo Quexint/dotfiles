@@ -2,12 +2,12 @@
 
 set -e
 
-COM_CONFIG="config/install-common-tools.yaml"
+COM_CONFIG="bootstrap/install-common-tools.yaml"
 
 if [[ "$OSTYPE" == darwin* ]]; then
-    SYS_CONFIG="config/install-osx.conf.yaml"
+    SYS_CONFIG="bootstrap/install-osx.conf.yaml"
 elif [[ "$OSTYPE" == linux* ]]; then
-    SYS_CONFIG="config/install-linux.conf.yaml"
+    SYS_CONFIG="bootstrap/install-linux.conf.yaml"
 else
     echo "[ERROR] unkown OSTYPE: $OSTYPE"
     exit 1

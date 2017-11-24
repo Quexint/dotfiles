@@ -9,10 +9,10 @@
 
 # Homebrew
 - shell:
-    - [ test -e /usr/local/bin/brew || $HOME/.dotfiles/config/install-homebrew.sh , Installing homebrew ]
+    - [ test -e /usr/local/bin/brew || $HOME/.dotfiles/bootstrap/install-homebrew.sh , Installing homebrew ]
       #    - [ brew tap homebrew/bundle , Installing homebrew-bundle ]
       #- [ brew bundle --file=$HOME/.dotfiles/package_manager/Brewfile, Installing homebrew formulae ]
 
 # karabiner
 - shell:
-    - [. karabiner.sh, setup karabiner's config]
+    - [. bootstrap/karabiner.sh, setup karabiner's config]
