@@ -1,0 +1,53 @@
+## Doxygen
+
+snippet doxHeader
+/*****************************************************************************/
+/** \file `!v expand('%:t')`
+**
+** \brief ${1:Unit-Test library utilities header file}
+**
+** \par Purpose
+**   ${2:Use mocks to test the functions.}
+**
+** \par Reference
+**   ${3:C11 Standard}
+**
+** \par Limitations, Assumptions, External Events, and Notes
+**    1. List assumptions that are made that apply to all functions in the file.
+**    2. List the external source(s) and event(s) that can cause the funcs in
+**       this file to execute.
+**    3. List known limitations that apply to the funcs in this file.
+**    4. If there are no assumptions, external events, or notes then enter NONE.
+**       Do not omit the section.
+**
+** \todo
+**    ${4:None}
+**
+** \bug
+**   ${6:[Workaround|Bug] XXX}
+**
+******************************************************************************/
+endsnippet
+
+snippet doxFunc
+/*****************************************************************************/
+/** \brief ${1:Read the input from the terminal}
+**
+** \par Description
+**        ${2:Read the input from the terminal. The teminator is ' '.}
+**
+** \par Assumptions, External Events, and Notes
+**        ${3:None}
+**
+** \param[in] ${4:char *} ${5:The input string format needs to be read.}
+**
+** \return #${6:int_32} ${7:The value will be 0 or > 0.}
+**
+** \par Algorithm
+**        ${8:None}
+**
+** \sa ${9:#printf}
+**
+******************************************************************************/
+${10:int_32 scanf(...);}
+endsnippet
