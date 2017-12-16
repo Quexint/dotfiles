@@ -4,15 +4,20 @@ There are my preferred settings of zsh, gdb, vim, git, and octave.
 
 Feel free to reference the files to learn how to set and use interesting plugins.
 
-I always use Mac OS X and CentOS, so I will keep it can run on these systems.
-
 ## Installation
 
-### Dependency
+You can learn how to install the dependencies and try the terminal with the Dockerfile.
 
-- **Ultisnips**: Vim >= 7.4
-- **numbers.vim**: Vim >= 7.3
-- **YouCompleteMe**: Vim >= 7.3.598
+For example, there is how to try the repo on fedora. ([Dockerfile](tests/fedora/Dockerfile))
+
+```bash
+# Build the image
+~/.dotfiles $ sudo docker build -t fedora-dotfiles tests/fedora/
+# Run the image
+~/.dotfiles $ sudo docker run -i -t fedora-dotfiles
+```
+
+The dependencies lists below:
 
 ```bash
 # Mac OS X
