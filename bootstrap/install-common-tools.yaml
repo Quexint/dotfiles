@@ -28,7 +28,7 @@
     $HOME/.ctags: ctags
 - shell:
     - [ touch $HOME/.dotfiles/zsh/local.aliases, Create empty local aliases ]
-    - [ $HOME/.fzf/install , Installing Fuzzy Finder ]
+    - [ $HOME/.fzf/install --key-bindings --completion --no-update-rc, Installing Fuzzy Finder ]
 
 # Vim
 - shell:
