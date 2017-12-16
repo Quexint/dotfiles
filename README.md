@@ -8,7 +8,8 @@ Feel free to reference the files to learn how to set and use interesting plugins
 
 You can learn how to install the dependencies and try the terminal with the Dockerfile.
 
-For example, there is how to try the repo on fedora. ([Dockerfile](tests/fedora/Dockerfile))
+- Fedora: [Dockerfile](tests/fedora/Dockerfile)
+- Arch Linux: [Dockerfile](tests/archlinux/Dockerfile)
 
 ```bash
 # Build the image
