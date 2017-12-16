@@ -7,7 +7,7 @@ export EDITOR=vim
 export MY_ZSH_ENV_PATH=$HOME/.dotfiles/zsh
 export MY_ZSH_PURE_PATH=$PATH
 
-plugins=(autojump brew common-aliases docker gem git git-flow gitfast npm osx pip pyenv python vagrant zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(autojump brew common-aliases docker gem git git-flow gitfast npm osx pip pyenv python vagrant zsh-completions zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 source $MY_ZSH_ENV_PATH/zsh_integration
