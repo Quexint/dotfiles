@@ -1,0 +1,10 @@
+exec awesome >> ~/.cache/awesome_stdout 2>> ~/.cache/awesome_stderr
+
+setxkbmap -option caps:ctrl_modifier
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+
+exec fcitx &
+
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
