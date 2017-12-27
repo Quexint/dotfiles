@@ -27,3 +27,8 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 
 # Cscope
 alias gentags='cscope -Rbq; ctags -R'
+
+# Common Aliases
+
+alias pid='ps aux | grep'
+alias killp='sudo kill -9'
