@@ -34,6 +34,10 @@
 - shell:
     - [ test -d $HOME/.vim/bundle/Vundle.vim || $HOME/.dotfiles/bootstrap/install-vim.sh , Installing Vundle ]
 
+# TMUX
+- shell:
+    - [ $HOME/.dotfiles/bootstrap/install-tmux.sh , Installing TMUX Plugins ]
+
 # Post Installation
 - shell:
     -
