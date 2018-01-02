@@ -12,6 +12,11 @@ fi
 function mkd() { mkdir -p "$@" && cd "$_"; }
 function copy_code() { highlight -O rtf "$@" | pbcopy; }
 
+# fedora
+[[ -e $(which vimx 2>/dev/null) ]] && alias vim='vimx'
+# Arch Linux
+[[ -e $(which gvim 2>/dev/null) ]] && alias vim='gvim'
+
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
