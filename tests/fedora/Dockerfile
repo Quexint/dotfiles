@@ -9,6 +9,8 @@ RUN dnf install -y autojump vim vim-X11 zsh mercurial tree thefuck
 RUN dnf install -y kernel-devel cmake python-devel python3-devel cmake git
 RUN dnf install -y clang xz tmux
 RUN dnf install -y util-linux-user
+RUN dnf install -y the_silver_searcher
+RUN dnf install -y glibc-devel.i686 graphviz
 RUN git clone --depth=1 --recursive https://github.com/Quexint/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles && ./install
 
 CMD ["/bin/zsh"]
