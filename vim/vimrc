@@ -36,6 +36,10 @@ let mapleader=","              " Change mapleader
         set wildmode=longest,list
     endif
 " }
+" Undo {
+    set undofile " Maintain undo history between sessions
+    set undodir=~/.vim/undodir
+" }
 
 " Terminal Setting {
     set t_Co=256
