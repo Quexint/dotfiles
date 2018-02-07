@@ -20,7 +20,7 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 alias gsa='git submodule add'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -lha'
 alias irssi='TERM=screen-256color irssi'
 
 # Get External IP / local IPs
@@ -32,6 +32,5 @@ alias speedtest="wget -O /dev/null http://speedtest.wdc01.softlayer.com/download
 alias gentags='cscope -Rbq; ctags -R'
 
 # Common Aliases
-
 alias pid='ps aux | grep'
 alias killp='sudo kill -9'
