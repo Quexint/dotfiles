@@ -216,17 +216,9 @@
             let g:DoxygenToolkit_compactOneLineDoc = "yes"
         " }
 
-        " Window Management - Taglist {
-            Plugin 'vim-scripts/taglist.vim'
-            nnoremap <silent> <F8> :TlistToggle<CR>
-            let Tlist_Show_One_File=0
-            let Tlist_Exit_OnlyWindow=1
-            let Tlist_Use_Right_Window=1
-            let Tlist_File_Fold_Auto_Close=1
-            autocmd BufWritePost *
-                        \ if filereadable('tags') |
-                        \   call system('ctags -a '.expand('%')) |
-                        \ endif
+        " Function Trace - Tagbar {
+            Plugin 'majutsushi/tagbar'
+            nnoremap <F8> :TagbarToggle<CR>
         " }
     " }
 " }
