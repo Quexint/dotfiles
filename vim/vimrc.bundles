@@ -58,13 +58,20 @@
         " }
     " }
 
-    " Markdown {
+    " Aligning text - tabular {
         Plugin 'godlygeek/tabular'
-        " Plugin 'plasticboy/vim-markdown'
-        " let g:vim_markdown_folding_disabled = 1
+    " }
+    " To-do List - Search Tasks {
+        Plugin 'gilsondev/searchtasks.vim'
+        let g:searchtasks_list=["TODO", "FIXME", "XXX"]
     " }
 
     " Developer Tools {
+        " Code Formater - autoformat {
+            Plugin 'Chiel92/vim-autoformat'
+            let b:formatdef_custom_c='"clang-format -i"'
+            let b:formatters_c = ['custom_c']
+        " }
         " Vim Tmux Interact - Vimux {
             Plugin 'benmills/vimux'
         " }
