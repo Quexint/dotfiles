@@ -116,7 +116,17 @@ let mapleader=","              " Change mapleader
             hi Pmenu                    ctermfg=14 ctermbg=242
             hi PmenuSel                 ctermfg=14 ctermbg=1
             hi PmenuSbar                ctermfg=14 ctermbg=0
-            hi SpellBad ctermbg=1
+            hi clear SpellBad
+            hi clear SpellCap
+            hi clear SpellLocal
+            hi clear SpellRare
+            hi SpellBad cterm=underline,bold ctermfg=166
+            hi SpellCap cterm=underline,bold ctermfg=Green
+            hi SpellLocal cterm=underline,bold ctermfg=Cyan
+            hi SpellRare cterm=underline,bold ctermfg=Magenta
+            hi clear Error
+            hi link Error airline_error_bold
+            hi ToDo cterm=bold
         " }
     " }
 " }
