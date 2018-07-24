@@ -26,3 +26,6 @@
 	whitespace = red reverse
 [diff-so-fancy]
 	first-run = false
+[alias]
+	l = log --oneline --graph
+	ls = log --graph --pretty=format:\"%h <%an> %ar %s\"
