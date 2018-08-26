@@ -7,11 +7,13 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 
 # ZSH Plugins
-plugins=(autojump brew common-aliases docker git git-flow gitfast osx zsh-completions zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(autojump brew common-aliases git git-flow gitfast osx vi-mode zsh-completions zsh-syntax-highlighting zsh-autosuggestions)
 
 # ZSH Theme
 GIT_PS1_SHOWSTASHSTATE=1
-POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir dir_writable vcs vi_mode)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs command_execution_time)
 ZSH_THEME="powerlevel9k"
 
 source $ZSH/oh-my-zsh.sh
