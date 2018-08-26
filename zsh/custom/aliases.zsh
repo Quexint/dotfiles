@@ -1,16 +1,9 @@
-# Dir Navigation
-source $MY_ZSH_ENV_PATH/local.aliases
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+alias tmp="cd ~/tmp/"
 
-# Functions
-# mkd xxx yyy: create the folder xxx and yyy
-# mkd "xxx yyy": create the folder called `xxx yyy`
-
-if [[ `uname` == "Linux" ]]; then
-    alias pbcopy='xclip -selection clipboard'
-    alias pbpaste='xclip -selection clipboard -o'
-fi
 function mkd() { mkdir -p "$@" && cd "$_"; }
-function copy_code() { highlight -O rtf "$@" | pbcopy; }
 
 # fedora
 [[ -z "$(vim --version | grep "\+xterm_clipboard")" ]] && [[ -e $(which vimx 2>/dev/null) ]] && alias vim='vimx'

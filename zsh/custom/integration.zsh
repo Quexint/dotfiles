@@ -16,9 +16,6 @@ if [[ "$OSTYPE" == darwin* ]]; then
     fi
 fi
 
-#======================== zsh-syntax-highlighting ========================
-[[ -e /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 #======================== fuzzy finder  ========================
 export FZF_DEFAULT_OPTS="--reverse --inline-info --preview 'head -100 {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

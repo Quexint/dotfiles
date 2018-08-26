@@ -43,7 +43,7 @@ githeart-p() {
   grep -o "[a-f0-9]\{7,\}"
 }
 
-githeart-r() {
+githeart-s() {
   is_in_git_repo || return
   git remote -v | awk '{print $1 "\t" $2}' | uniq |
   fzf-down --tac \

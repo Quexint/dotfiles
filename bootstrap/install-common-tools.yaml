@@ -16,18 +16,17 @@
 
 # Linking
 - link:
-    $HOME/usr: usr
+    $HOME/local: local
     $HOME/.zshrc: zsh/zshrc
     $HOME/.gdbinit: tools/gdb-dashboard/.gdbinit
-    $HOME/.gitconfig: gitconfig
-    $HOME/.gitignore_global: gitignore_global
-    $HOME/.octaverc: octaverc
+    $HOME/.gitconfig: config/gitconfig
+    $HOME/.gitignore_global: config/gitignore_global
+    $HOME/.octaverc: config/octaverc
     $HOME/.tmux.conf: tmux/tmux.conf
     $HOME/.vimrc: vim/vimrc
     $HOME/.fzf: tools/fzf
-    $HOME/.ctags: ctags
+    $HOME/.ctags: config/ctags
 - shell:
-    - [ touch $HOME/.dotfiles/zsh/local.aliases, Create empty local aliases ]
     - [ $HOME/.fzf/install --key-bindings --completion --no-update-rc, Installing Fuzzy Finder ]
 
 # Vim

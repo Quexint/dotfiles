@@ -1,8 +1,6 @@
 # Csharp PATH
 export MONO_GAC_PREFIX="/usr/local"
 
-export PATH="$HOME/bin:$PATH"
-
 # Yarn PATH
 if [[ -d "$HOME/.yarn/bin" ]]; then
 	export PATH="$HOME/.yarn/bin:$PATH"
@@ -59,6 +57,8 @@ fi
 # if [[ -d "/usr/local/opt/llvm/bin" ]]; then
 #   export PATH="/usr/local/opt/llvm/bin:$PATH"
 # fi
+
+export PATH="$HOME/local/bin:$PATH"
 
 # PATH
 if [[ `uname` == 'Darwin' ]]
