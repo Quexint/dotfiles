@@ -19,13 +19,13 @@
     $HOME/local: local
     $HOME/.zshrc: zsh/zshrc
     $HOME/.gdbinit: tools/gdb-dashboard/.gdbinit
-    $HOME/.gitconfig: config/gitconfig
-    $HOME/.gitignore_global: config/gitignore_global
-    $HOME/.octaverc: config/octaverc
+    $HOME/.gitconfig: configs/gitconfig
+    $HOME/.gitignore_global: configs/gitignore_global
+    $HOME/.octaverc: configs/octaverc
     $HOME/.tmux.conf: tmux/tmux.conf
     $HOME/.vimrc: vim/vimrc
     $HOME/.fzf: tools/fzf
-    $HOME/.ctags: config/ctags
+    $HOME/.ctags: configs/ctags
 - shell:
     - [ $HOME/.fzf/install --key-bindings --completion --no-update-rc, Installing Fuzzy Finder ]
 
