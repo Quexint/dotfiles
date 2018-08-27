@@ -7,7 +7,8 @@ export LC_ALL=en_US.UTF-8
 export EDITOR=vim
 
 # ZSH Plugins
-plugins=(autojump brew common-aliases git git-flow gitfast osx vi-mode zsh-completions zsh-syntax-highlighting zsh-autosuggestions)
+# Do not use vi-mode plugins to ruin the arrow key completion
+plugins=(autojump brew common-aliases git git-flow gitfast osx zsh-completions zsh-syntax-highlighting zsh-autosuggestions)
 
 # ZSH Theme
 GIT_PS1_SHOWSTASHSTATE=1
@@ -19,16 +20,20 @@ ZSH_THEME="powerlevel9k"
 source $ZSH/oh-my-zsh.sh
 
 #======================== Command History Setting ========================
-zshaddhistory () {
-  # Don't store the command under these constraints: (1) Len <= 5 (2) cd/ls/git
-  COMMAND_STR=${1%%$'\n'}
-  [[  ( ${#COMMAND_STR} -le 5) || ( -z $COMMAND_STR ) || ( $COMMAND_STR =~ hist(ory)? ) || \
-      ( $COMMAND_STR =~ '^l(s\|l\|a)? \*$' ) || \
-      ( $COMMAND_STR =~ '^(d\|gd\|git\ diff\|glp\|gg)$' ) \
-  ]] && return 1
-  # Don't store the failed command
-  whence ${${(z)1}[1]} >| /dev/null && return 1
-}
+function zshaddhistory() { # {{{
+  # http://mollifier.hatenablog.com/entry/20090728/p1
+  local line cmd
+  line=${1%%$'\n'}
+  cmd=${line%% *}
+
+  # Add command to history if it meets the following conditions
+  [[ ${#line} -ge 5
+  && ${cmd} != (l|l[sal])
+  && ${cmd} != (c|cd)
+  && ${cmd} != (m|man)
+  && ${cmd} != (r[mr])
+  ]]
+} # }}}
 
 # Remove duplicate items in fzf
 setopt EXTENDED_HISTORY
