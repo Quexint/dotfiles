@@ -39,6 +39,8 @@
 
 # Post Installation
 - shell:
+    - [ sleep 1 , Please install bat manully ]
+- shell:
     -
       command: chsh -s /bin/zsh
       stdin: true
