@@ -196,6 +196,8 @@ let mapleader=","              " Change mapleader
     set lcs=tab:›\ ,trail:·,eol:␍,nbsp:_
     set fcs=fold:-
     nnoremap <silent> <leader>n :set nolist!<CR>
+    " Display CRLF as ^M (,m)
+    nnoremap <silent> <leader>m :e ++ff=unix<CR>
 
     " Function Folding
     inoremap <F9> <C-O>zA
