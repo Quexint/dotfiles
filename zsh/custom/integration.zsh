@@ -19,6 +19,13 @@ if [[ "$OSTYPE" == darwin* ]]; then
     fi
 fi
 
+#======================== Integration with macOS lldb ========================
+# Prevent lldb from loading brew-python2
+#
+if [[ "$OSTYPE" == darwin* ]]; then
+    alias lldb='PATH=/usr/bin:$PATH lldb'
+fi
+
 #======================== fuzzy finder  ========================
 export FZF_DEFAULT_OPTS="--reverse --inline-info --preview 'head -100 {}'"
 [[ -e $(which bat 2>/dev/null) ]] && export FZF_DEFAULT_OPTS="--reverse --inline-info --preview 'bat --color "always" {}'"
