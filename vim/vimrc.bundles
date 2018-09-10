@@ -198,6 +198,9 @@
             "let g:indent_guides_enable_on_vim_startup = 1
         " }
 
+        " wordmotion {
+            Plugin 'chaoren/vim-wordmotion'
+        " }
         " Easymotion {
             " To jump everywhere in the source code.
             Plugin 'Lokaltog/vim-easymotion'
