@@ -65,6 +65,9 @@
         Plugin 'gilsondev/searchtasks.vim'
         let g:searchtasks_list=["TODO", "FIXME", "XXX"]
     " }
+    " Additional Text Objects - Targets {
+        Plugin 'wellle/targets.vim'
+    " }
 
     " Developer Tools {
         " Code Formater - autoformat {
