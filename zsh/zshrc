@@ -8,7 +8,7 @@ export EDITOR=vim
 
 # ZSH Plugins
 # Do not use vi-mode plugins to ruin the arrow key completion
-plugins=(autojump brew common-aliases git git-flow gitfast osx zsh-completions zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(autojump common-aliases git git-flow gitfast osx zsh-completions zsh-syntax-highlighting zsh-autosuggestions)
 
 # ZSH Theme
 GIT_PS1_SHOWSTASHSTATE=1
