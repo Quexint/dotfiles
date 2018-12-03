@@ -1,3 +1,6 @@
+# Rust PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Csharp PATH
 export MONO_GAC_PREFIX="/usr/local"
 
