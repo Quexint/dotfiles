@@ -29,3 +29,4 @@
 [alias]
 	l = log --oneline --graph
 	ls = log --graph --pretty=format:\"%h <%an> %ar %s\"
+	last = log -1 HEAD
