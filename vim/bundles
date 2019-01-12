@@ -41,6 +41,8 @@
 
         " Git Diff - vim-gitgutter {
             Plugin 'airblade/vim-gitgutter'
+            let g:gitgutter_async = 0
+            " <leader>hp  = GitGutterPreviewHunk
         " }
 
         " Line Number - numbers {
