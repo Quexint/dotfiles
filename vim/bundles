@@ -34,6 +34,7 @@
             nmap <leader>9 <Plug>AirlineSelectTab9
             nnoremap <Leader>z :bp<CR>
             nnoremap <Leader>x :bn<CR>
+            nnoremap <Leader>b :Buffers<CR>
         " }
 
         " indentLine - Show Tab / Leading Spaces {
