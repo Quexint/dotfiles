@@ -1,3 +1,4 @@
+" vim: syntax=vim
 " Environment {
     " Basics {
         set nocompatible        " Must be first line
