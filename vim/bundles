@@ -65,6 +65,11 @@
     " Aligning text - tabular {
         Plugin 'godlygeek/tabular'
     " }
+    " vimwiki {
+        Plugin 'vimwiki/vimwiki'
+        let g:vimwiki_list = [{'path': '~/.dotfiles/vim/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+    " }
+
     " To-do List - Search Tasks {
         Plugin 'gilsondev/searchtasks.vim'
         let g:searchtasks_list=["TODO", "FIXME", "XXX"]
