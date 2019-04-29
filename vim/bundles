@@ -120,6 +120,10 @@
             Plugin 'L9'
         " }
 
+        " Rust {
+            Plugin 'rust-lang/rust.vim'
+        " }
+
         " Search Tool - Ack {
             Plugin 'mileszs/ack.vim'
             if executable('ag')
