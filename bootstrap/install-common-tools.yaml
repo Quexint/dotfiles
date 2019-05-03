@@ -13,6 +13,7 @@
 # Oh-my-zsh
 - shell:
     - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/bootstrap/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
+    - [ rm $HOME/.zshrc , Remove the default zsh config ]
 
 # Linking
 - link:
