@@ -124,6 +124,7 @@
 
         " Rust {
             Plugin 'rust-lang/rust.vim'
+            let g:rust_recommended_style = 0
         " }
 
         " Search Tool - Ack {
