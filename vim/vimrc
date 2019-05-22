@@ -3,8 +3,8 @@ filetype off                   " required!
 let mapleader=","              " Change mapleader
 
 " Vundle Plugins {
-    if filereadable(expand('~/.dotfiles/vim/bundles'))
-        source ~/.dotfiles/vim/bundles
+    if filereadable(expand('~/.dotfiles/vim/bundles.vim'))
+        source ~/.dotfiles/vim/bundles.vim
     endif
 " }
 

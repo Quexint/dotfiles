@@ -14,24 +14,26 @@
 
 " Bundle {
     " Style {
-        " Status Bar - Airline {
-            Plugin 'vim-airline/vim-airline'
-            Plugin 'vim-airline/vim-airline-themes'
-            set laststatus=2
-            let g:solarized_termcolors=256
-            let g:airline_theme='solarized'
-            let g:airline_powerline_fonts = 1
-            let g:airline#extensions#tabline#enabled = 1
-            let g:airline#extensions#tabline#buffer_idx_mode = 1
-            nmap <leader>1 <Plug>AirlineSelectTab1
-            nmap <leader>2 <Plug>AirlineSelectTab2
-            nmap <leader>3 <Plug>AirlineSelectTab3
-            nmap <leader>4 <Plug>AirlineSelectTab4
-            nmap <leader>5 <Plug>AirlineSelectTab5
-            nmap <leader>6 <Plug>AirlineSelectTab6
-            nmap <leader>7 <Plug>AirlineSelectTab7
-            nmap <leader>8 <Plug>AirlineSelectTab8
-            nmap <leader>9 <Plug>AirlineSelectTab9
+        " Status Bar - crystalline {
+			Plugin 'rbong/vim-crystalline'
+			function! StatusLine(current, width)
+			  return (a:current ? crystalline#mode() . '%#Crystalline#' : '%#CrystallineInactive#')
+					\ . ' %f%h%w%m%r '
+					\ . (a:current ? '%#CrystallineFill# %{fugitive#head()} ' : '')
+					\ . '%=' . (a:current ? '%#Crystalline# %{&paste?"PASTE ":""}%{&spell?"SPELL ":""}' . crystalline#mode_color() : '')
+					\ . (a:width > 80 ? ' %{&ft}[%{&enc}][%{&ffs}] %l/%L %c%V %P ' : ' ')
+			endfunction
+			
+			function! TabLine()
+			  let l:vimlabel = has("nvim") ?  " NVIM " : " VIM "
+			  return crystalline#bufferline(2, len(l:vimlabel), 1) . '%=%#CrystallineTab# ' . l:vimlabel
+			endfunction
+			
+			let g:crystalline_statusline_fn = 'StatusLine'
+			let g:crystalline_tabline_fn = 'TabLine'
+			let g:crystalline_theme = 'solarized'
+			set showtabline=2
+			set laststatus=2
             nnoremap <Leader>z :bp<CR>
             nnoremap <Leader>x :bn<CR>
             nnoremap <Leader>b :Buffers<CR>
