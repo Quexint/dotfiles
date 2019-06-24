@@ -27,3 +27,4 @@ alias gentags='cscope -Rbq; ctags -R'
 # Common Aliases
 alias pid='ps aux | grep'
 alias killp='sudo kill -9'
+alias lsport='sudo lsof -i -P -n | grep LISTEN'
