@@ -63,6 +63,11 @@
             Plugin 'FencView.vim'
         " }
     " }
+    " JShint {
+        Plugin 'NikolayFrantsev/jshint2.vim'
+        nnoremap <silent><F1> :JSHint<CR>
+
+    " }
 
     " Aligning text - tabular {
         Plugin 'godlygeek/tabular'
