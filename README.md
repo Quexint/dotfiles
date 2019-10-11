@@ -1,6 +1,6 @@
 # Dotfiles
 
-There are my preferred settings of zsh, gdb, vim, git, and octave.
+There are my preferred settings of zsh, gdb, vim, and git.
 
 Feel free to reference the files to learn how to set and use interesting plugins.
 

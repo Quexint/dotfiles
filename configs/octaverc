@@ -1,3 +1,0 @@
-setenv('GNUTERM','aqua')
-PS1('>> ')
-disp(sprintf('octave-cli %s:', OCTAVE_VERSION))
