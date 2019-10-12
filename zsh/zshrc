@@ -13,6 +13,7 @@ plugins=(
     docker
     gitfast
     git-extras
+    gitignore
     notify
     vscode
     zsh-256color
