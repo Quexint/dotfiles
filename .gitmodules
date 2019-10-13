@@ -34,3 +34,6 @@
 [submodule "zsh/custom/plugins/gitignore"]
 	path = zsh/custom/plugins/gitignore
 	url = https://github.com/voronkovich/gitignore.plugin.zsh
+[submodule "zsh/custom/plugins/notify"]
+	path = zsh/custom/plugins/notify
+	url = https://github.com/marzocchi/zsh-notify.git
