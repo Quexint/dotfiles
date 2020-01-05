@@ -1,3 +1,10 @@
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/local/bin:$PATH"
+
+# Nodejs PATH (n)
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+export PATH="$HOME/n/bin:$PATH"
+
 # Rust PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -56,17 +63,9 @@ if [[ -d "/usr/local/opt/gcc/bin" ]]; then
   export PATH="/usr/local/opt/gcc/bin:$PATH"
 fi
 
-# LLVM Path
-# if [[ -d "/usr/local/opt/llvm/bin" ]]; then
-#   export PATH="/usr/local/opt/llvm/bin:$PATH"
-# fi
-
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/local/bin:$PATH"
-
 # PATH
 if [[ `uname` == 'Darwin' ]]
 then
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:/usr/local/bin:$PATH"
+  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
   set RANGER_LOAD_DEFAULT_RC=FALSE
 fi
