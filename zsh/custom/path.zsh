@@ -61,6 +61,7 @@ fi
 #   export PATH="/usr/local/opt/llvm/bin:$PATH"
 # fi
 
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 
 # PATH

@@ -11,7 +11,7 @@ export EDITOR=vim
 plugins=(
     autojump
     docker
-    gitfast
+    git
     git-extras
     gitignore
     notify
