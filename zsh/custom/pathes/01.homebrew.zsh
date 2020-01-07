@@ -8,5 +8,5 @@ fi
 # PATH
 if [[ `uname` == 'Darwin' ]]
 then
-  export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  # export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 fi

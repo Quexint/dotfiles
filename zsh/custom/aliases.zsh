@@ -13,7 +13,12 @@ alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
 alias gsa='git submodule add'
-alias ls='ls --color=auto -lha'
+if [[ `uname` == 'Darwin' ]]
+then
+    alias ls='ls -G -lha'
+else
+    alias ls='ls --color=auto -lha'
+fi
 alias irssi='TERM=screen-256color irssi'
 
 # Get External IP / local IPs
