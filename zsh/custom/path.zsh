@@ -2,6 +2,8 @@
 setopt null_glob
 setopt extended_glob
 
-for x in pathes/*; do
+BASEDIR=$(dirname $0)
+
+for x in ${BASEDIR}/pathes/*; do
     source ${x}
 done
