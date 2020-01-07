@@ -26,6 +26,7 @@
     $HOME/.vimrc: vim/vimrc
     $HOME/.fzf: tools/fzf
     $HOME/.ctags: configs/ctags
+    $HOME/.czrc: configs/czrc
 - shell:
     - [ $HOME/.fzf/install --key-bindings --completion --no-update-rc, Installing Fuzzy Finder ]
 

@@ -32,3 +32,5 @@
 	last = log -1 HEAD
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[init]
+	templatedir = ~/.dotfiles/templates/git-repo
