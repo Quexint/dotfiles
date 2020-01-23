@@ -1,48 +1,49 @@
 - defaults:
-    link:
-        relink: true
-    shell:
-        stdout: true
-        stderr: true
+  link:
+    create: true
+    relink: true
+  shell:
+    stdout: true
+    stderr: true
 
 - clean: ['$HOME']
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [chsh -s $(which zsh), Making zsh the default shell]
 
-# Oh-my-zsh
+# ZIM
 - shell:
-    - [ test -d $HOME/.oh-my-zsh || $HOME/.dotfiles/bootstrap/install-oh-my-zsh.sh , Installing Oh-My-Zsh ]
-    - [ rm $HOME/.zshrc , Remove the default zsh config ]
+    - [ wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh, Installing zim ]
 
-# Linking
-- link:
-    $HOME/local: local
-    $HOME/.zshrc: zsh/zshrc
-    $HOME/.gdbinit: tools/gdb-dashboard/.gdbinit
-    $HOME/.gitconfig: configs/gitconfig
-    $HOME/.gitignore_global: configs/gitignore_global
-    $HOME/.tmux.conf: tmux/tmux.conf
-    $HOME/.vimrc: vim/vimrc
-    $HOME/.fzf: tools/fzf
-    $HOME/.ctags: configs/ctags
-    $HOME/.czrc: configs/czrc
-- shell:
-    - [ $HOME/.fzf/install --key-bindings --completion --no-update-rc, Installing Fuzzy Finder ]
+# # Linking
+# - link:
+#     $HOME/local: local
+#     $HOME/.zshrc: zsh/zshrc
+#     $HOME/.gdbinit: tools/gdb-dashboard/.gdbinit
+#     $HOME/.gitconfig: configs/gitconfig
+#     $HOME/.gitignore_global: configs/gitignore_global
+#     $HOME/.tmux.conf: tmux/tmux.conf
+#     $HOME/.vimrc: vim/vimrc
+#     $HOME/.fzf: tools/fzf
+#     $HOME/.ctags: configs/ctags
+#     $HOME/.czrc: configs/czrc
+# - shell:
+#     - [ $HOME/.fzf/install --key-bindings --completion --no-update-rc, Installing Fuzzy Finder ]
 
-# Vim
-- shell:
-    - [ test -d $HOME/.vim/bundle/Vundle.vim || $HOME/.dotfiles/bootstrap/install-vim.sh , Installing Vundle ]
+# # Vim
+# - shell:
+#     - [ test -d $HOME/.vim/bundle/Vundle.vim || $HOME/.dotfiles/bootstrap/install-vim.sh , Installing Vundle ]
 
-# TMUX
-- shell:
-    - [ $HOME/.dotfiles/bootstrap/install-tmux.sh , Installing TMUX Plugins ]
+# # TMUX
+# - shell:
+#     - [ $HOME/.dotfiles/bootstrap/install-tmux.sh , Installing TMUX Plugins ]
 
-# Post Installation
-- shell:
-    - [ sleep 1 , Please install bat manully ]
-- shell:
-    -
-      command: chsh -s /bin/zsh
-      stdin: true
-      stdout: true
+# # Post Installation
+# - shell:
+#     - [ sleep 1 , Please install bat manully ]
+# - shell:
+#     -
+#       command: chsh -s /bin/zsh
+#       stdin: true
+#       stdout: true
