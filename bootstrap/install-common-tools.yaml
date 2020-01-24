@@ -1,10 +1,11 @@
 - defaults:
-  link:
-    create: true
-    relink: true
-  shell:
-    stdout: true
-    stderr: true
+    link:
+        create: true
+        relink: true
+        force: true
+    shell:
+        stdout: true
+        stderr: true
 
 - clean: ['$HOME']
 
@@ -15,6 +16,11 @@
 # ZIM
 - shell:
     - [ wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh, Installing zim ]
+- link:
+    $HOME/.zshrc: zim/zshrc
+    $HOME/.zshenv: zim/zshenv
+    $HOME/.zimrc: zim/zimrc
+    $HOME/.zlogin: zim/zlogin
 
 # # Linking
 # - link:

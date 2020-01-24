@@ -1,0 +1,18 @@
+# Start configuration added by Zim install {{{
+#
+# User configuration sourced by all invocations of the shell
+#
+# Define Zim location
+: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
+
+setopt null_glob
+setopt extended_glob
+BASEDIR=$(dirname $(readlink -f ${(%):-%N}))
+
+# Include all pathes in subdirectory
+for x in ${BASEDIR}/pathes/*; do
+    echo "Sourcing ${x}"
+    source ${x}
+done
+
+# }}} End configuration added by Zim install
