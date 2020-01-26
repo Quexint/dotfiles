@@ -1,17 +1,20 @@
 # Start configuration added by Zim install {{{
 #
-# User configuration sourced by all invocations of the shell
+# Debug: zsh -o SOURCE_TRACE
 #
-# Define Zim location
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
 
 setopt null_glob
 setopt extended_glob
-BASEDIR=$(dirname $(readlink -f ${(%):-%N}))
+
+if [[ "$OSTYPE" == darwin* ]]; then
+    BASEDIR=$(dirname $(/usr/local/opt/coreutils/libexec/gnubin/readlink -f ${(%):-%N}))
+else
+    BASEDIR=$(dirname $(readlink -f ${(%):-%N}))
+fi
 
 # Include all pathes in subdirectory
 for x in ${BASEDIR}/pathes/*; do
-    echo "Sourcing ${x}"
     source ${x}
 done
 
