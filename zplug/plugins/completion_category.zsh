@@ -1,6 +1,12 @@
 # Enable completion category
 autoload -Uz compinit && compinit
 
+# Oh-my-zsh file completion
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+
+# reverse completion
+bindkey '^[[Z' reverse-menu-complete
+
 zstyle ':completion:*:' menu yes select
 # format all messages not formatted in bold prefixed with ----
 zstyle ':completion:*' format '%B---- %d%b'
