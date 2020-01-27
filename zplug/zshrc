@@ -15,7 +15,10 @@ zplug "marzocchi/zsh-notify"
 zplug "chrissicool/zsh-256color"
 zplug "voronkovich/gitignore.plugin.zsh"
 
+zplug "plugins/autojump", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/git-extras", from:oh-my-zsh
 zplug "plugins/extract", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
