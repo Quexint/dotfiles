@@ -8,6 +8,7 @@ HISTFILE=~/.zsh_history
 # zplug plugins
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zpm-zsh/ls"
@@ -26,6 +27,9 @@ zplug "plugins/sudo", from:oh-my-zsh
 zplug '~/.dotfiles/zplug/aliases', from:local
 zplug '~/.dotfiles/zplug/pathes', from:local
 zplug '~/.dotfiles/zplug/plugins', from:local
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Install packages that have not been installed yet
 $(zplug check) || zplug install
