@@ -8,13 +8,6 @@ HISTFILE=~/.zsh_history
 # zplug plugins
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-completions"
-zplug "zdharma/fast-syntax-highlighting"
-zplug "zpm-zsh/ls"
-zplug "marzocchi/zsh-notify"
-zplug "chrissicool/zsh-256color"
-zplug "voronkovich/gitignore.plugin.zsh"
 
 zplug "plugins/autojump", from:oh-my-zsh
 zplug "plugins/docker", from:oh-my-zsh
@@ -24,10 +17,20 @@ zplug "plugins/extract", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 
+zplug "zdharma/fast-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zpm-zsh/ls"
+zplug "marzocchi/zsh-notify"
+zplug "chrissicool/zsh-256color"
+zplug "voronkovich/gitignore.plugin.zsh"
+
 zplug '~/.dotfiles/zplug/aliases', from:local
 zplug '~/.dotfiles/zplug/pathes', from:local
 zplug '~/.dotfiles/zplug/plugins', from:local
 
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
