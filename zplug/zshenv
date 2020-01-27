@@ -1,9 +1,5 @@
-# Start configuration added by Zim install {{{
-#
 # Debug: zsh -o SOURCE_TRACE
 #
-: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
-
 setopt null_glob
 setopt extended_glob
 
@@ -13,9 +9,7 @@ else
     BASEDIR=$(dirname $(readlink -f ${(%):-%N}))
 fi
 
-# Include all pathes in subdirectory
-for x in ${BASEDIR}/pathes/*; do
+# Include all variables in subdirectory
+for x in ${BASEDIR}/env/*; do
     source ${x}
 done
-
-# }}} End configuration added by Zim install

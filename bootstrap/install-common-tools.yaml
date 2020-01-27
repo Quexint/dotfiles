@@ -13,29 +13,28 @@
     - [git submodule update --init --recursive, Installing submodules]
     - [chsh -s $(which zsh), Making zsh the default shell]
 
-# ZIM
-- shell:
-    - [ wget -nv -O - https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh, Installing zim ]
+# zplug
 - link:
-    $HOME/.zshrc: zim/zshrc
-    $HOME/.zshenv: zim/zshenv
-    $HOME/.zimrc: zim/zimrc
-    $HOME/.zlogin: zim/zlogin
+    $HOME/.zshrc: zplug/zshrc
+    $HOME/.zshenv: zplug/zshenv
+    $HOME/.zplug: zplug/zplug
+    $HOME/.p10k.zsh: zplug/p10k.zsh
 
-# # Linking
-# - link:
+# fzf
+- shell:
+    - [ "git clone --depth 1 https://github.com/junegunn/fzf.git ${HOME}/.fzf" , Installing fzf ]
+    - [ "${HOME}/.fzf/install --key-bindings --completion --no-update-rc" , Setup fzf ]
+
+# # tools
+- link:
+    $HOME/.gdbinit: tools/gdb-dashboard/.gdbinit
+    $HOME/.gitconfig: zplug/gitconfig
+    $HOME/.gitignore_global: zplug/gitignore_global
+    $HOME/.ctags: zplug/ctags
+    $HOME/.czrc: zplug/czrc
 #     $HOME/local: local
-#     $HOME/.zshrc: zsh/zshrc
-#     $HOME/.gdbinit: tools/gdb-dashboard/.gdbinit
-#     $HOME/.gitconfig: configs/gitconfig
-#     $HOME/.gitignore_global: configs/gitignore_global
 #     $HOME/.tmux.conf: tmux/tmux.conf
 #     $HOME/.vimrc: vim/vimrc
-#     $HOME/.fzf: tools/fzf
-#     $HOME/.ctags: configs/ctags
-#     $HOME/.czrc: configs/czrc
-# - shell:
-#     - [ $HOME/.fzf/install --key-bindings --completion --no-update-rc, Installing Fuzzy Finder ]
 
 # # Vim
 # - shell:
@@ -44,12 +43,3 @@
 # # TMUX
 # - shell:
 #     - [ $HOME/.dotfiles/bootstrap/install-tmux.sh , Installing TMUX Plugins ]
-
-# # Post Installation
-# - shell:
-#     - [ sleep 1 , Please install bat manully ]
-# - shell:
-#     -
-#       command: chsh -s /bin/zsh
-#       stdin: true
-#       stdout: true

@@ -37,3 +37,6 @@
 [submodule "zsh/custom/plugins/notify"]
 	path = zsh/custom/plugins/notify
 	url = https://github.com/marzocchi/zsh-notify.git
+[submodule "zplug/zplug"]
+	path = zplug/zplug
+	url = https://github.com/zplug/zplug

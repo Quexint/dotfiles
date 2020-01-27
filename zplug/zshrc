@@ -1,0 +1,33 @@
+source ~/.zplug/init.zsh
+
+# History config
+HISTSIZE=60000
+SAVEHIST=60000
+HISTFILE=~/.zsh_history
+
+# zplug plugins
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug "zsh-users/zsh-completions"
+zplug "zdharma/fast-syntax-highlighting"
+zplug "zpm-zsh/ls"
+zplug "marzocchi/zsh-notify"
+zplug "chrissicool/zsh-256color"
+zplug "voronkovich/gitignore.plugin.zsh"
+
+zplug "plugins/docker", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
+
+zplug '~/.dotfiles/zplug/aliases', from:local
+zplug '~/.dotfiles/zplug/pathes', from:local
+zplug '~/.dotfiles/zplug/plugins', from:local
+
+# Install packages that have not been installed yet
+$(zplug check) || zplug install
+
+zplug load
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
