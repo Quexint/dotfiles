@@ -4,36 +4,22 @@ There are my preferred settings of zsh, gdb, vim, and git.
 
 Feel free to reference the files to learn how to set and use interesting plugins.
 
+## Getting Started in Docker
+
+```bash
+dotfiles $ sudo docker build --rm . -f dockerfiles/Dockerfile.ubuntu -t dotfiles.ubuntu
+dotfiles $ sudo docker run -it dotfiles.ubuntu /bin/zsh
+```
+
 ## Installation
 
-You can learn how to install the dependencies and try the terminal with the Dockerfile.
-
-- Fedora: [Dockerfile](tests/fedora/Dockerfile)
-- Arch Linux: [Dockerfile](tests/archlinux/Dockerfile)
-
-```bash
-# Build the image
-~/.dotfiles $ sudo docker build -t fedora-dotfiles tests/fedora/
-# Run the image
-~/.dotfiles $ sudo docker run -i -t fedora-dotfiles
-```
-
-The dependencies lists below:
-
-```bash
-# Mac OS X
-brew install autojump vim ctags-exuberant zsh mercurial tree libxml2 thefuck && easy_install pygments
-
-# CentOS 7
-sudo yum install autojump automake gcc gcc-c++ kernel-devel cmake python-devel python3-devel cmake ctags zsh hg tree libxml2 git vim vim-X11; easy_install pygments
-
-# Arch Linux
-sudo pacman -S --needed autojump cmake python2 python3 ctags zsh mercurial tree cscope python2-setuptools python3-setuptools clang openmp
-```
-
-### Automated Installation
-
 **Install**: `git clone --depth=1 --recursive https://github.com/Quexint/dotfiles.git $HOME/.dotfiles && cd $HOME/.dotfiles && ./install`
+
+## Debugging
+
+- List all loading zsh at startup: `zsh -o SOURCE_TRACE`
+- List current binding keys: `bindkey`
+- List current zsh options: `setopt`
 
 ## References
 
@@ -63,4 +49,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
