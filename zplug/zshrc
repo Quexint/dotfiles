@@ -1,5 +1,7 @@
 source ~/.zplug/init.zsh
 
+setopt nonomatch
+
 # History config
 HISTSIZE=60000
 SAVEHIST=60000

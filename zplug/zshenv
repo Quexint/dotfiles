@@ -13,3 +13,6 @@ fi
 for x in ${BASEDIR}/env/*; do
     source ${x}
 done
+
+setopt nonull_glob
+setopt noextended_glob
