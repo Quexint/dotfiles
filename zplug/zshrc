@@ -19,6 +19,7 @@ zplug "plugins/extract", from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
 
+zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma/fast-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
@@ -35,6 +36,7 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey "\e[3~" delete-char
 
 # Install packages that have not been installed yet
 $(zplug check) || zplug install
