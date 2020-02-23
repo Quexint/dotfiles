@@ -36,7 +36,18 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey "\e[3~" delete-char
+bindkey "^[[2~" overwrite-mode # Ins
+bindkey "^[[3~" delete-char # Del
+bindkey "^[[5~" beginning-of-history #PageUp
+bindkey "^[[6~" end-of-history #PageDown
+if [ "$TERM" == "screen" ] || [ -n "$TMUX" ]; then
+  bindkey "^[[1~" beginning-of-line
+  bindkey "^[[4~" end-of-line
+else
+  # Assign these keys if tmux is NOT being used:
+  bindkey "^[[H" beginning-of-line
+  bindkey "^[[F" end-of-line
+fi
 
 # Install packages that have not been installed yet
 $(zplug check) || zplug install
