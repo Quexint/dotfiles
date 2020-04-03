@@ -29,3 +29,4 @@ dotfiles $ sudo docker run -it dotfiles.ubuntu /bin/zsh
 
 - [Github dotfiles](https://dotfiles.github.io/)
 - [A lot of dotfiles Repo](https://github.com/search?o=desc&q=dotfiles&s=stars&type=Repositories&utf8=%E2%9C%93)
+- [Jaime's Guide to Tmux: The Most Awesome Tool You Didn't know you needed](https://www.barbarianmeetscoding.com/blog/2019/12/25/jaimes-guide-to-tmux-the-most-awesome-tool-you-didnt-know-you-needed)
